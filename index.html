@@ -41,9 +41,15 @@
                     <h2>Öne Çıkan Projeler</h2>
                 </div>
 
+                <div class="project-filters">
+                    <button class="filter-btn active" data-filter="all">Tümü</button>
+                    <button class="filter-btn" data-filter="villa">Villalar</button>
+                    <button class="filter-btn" data-filter="apartment">Apartmanlar</button>
+                </div>
+
                 <div class="project-list">
                     <!-- Proje 1 -->
-                    <article class="project-card">
+                    <article class="project-card" data-category="villa">
                         <div class="project-image">
                             <img src="https://via.placeholder.com/800x500/AABBCC/FFFFFF?text=Urla+Modern+Villaları" alt="Urla Modern Villaları">
                             <span class="new-badge">YENİ</span>
@@ -69,7 +75,7 @@
                     </article>
 
                     <!-- Proje 2 -->
-                    <article class="project-card">
+                    <article class="project-card" data-category="apartment">
                         <div class="project-image">
                             <img src="https://via.placeholder.com/800x500/CCDDEE/FFFFFF?text=Folkart+Blu+Çeşme" alt="Folkart Blu Çeşme Projesi">
                         </div>
@@ -93,7 +99,7 @@
                         </div>
                     </article>
                      <!-- Proje 3 -->
-                    <article class="project-card">
+                    <article class="project-card" data-category="apartment">
                         <div class="project-image">
                             <img src="https://via.placeholder.com/800x500/EEBBCC/FFFFFF?text=Mavişehir+Park+Yaşam" alt="Mavişehir Park Yaşam Projesi">
                             <span class="new-badge">YENİ</span>
