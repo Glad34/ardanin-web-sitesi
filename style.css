@@ -41,7 +41,7 @@ h1, h2, h3, h4, h5, h6 {
 /* --- HERO BÖLÜMÜ --- */
 .hero-section {
     height: 100vh;
-    background-image: url('https://via.placeholder.com/1920x1080/445566/FFFFFF?text=İzmir+Manzarası');
+    background-image: url('assets/hero.jpg');
     background-size: cover;
     background-position: center;
     position: relative;
