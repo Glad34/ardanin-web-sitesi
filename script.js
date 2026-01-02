@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 projectCards.forEach(card => {
                     const category = card.getAttribute('data-category');
                     if (filter === 'all' || filter === category) {
-                        card.style.display = 'block';
+                        card.style.display = 'block'; // Changed from 'block' to 'flex' or 'grid' if needed, but 'block' works with grid container.
                     } else {
                         card.style.display = 'none';
                     }
