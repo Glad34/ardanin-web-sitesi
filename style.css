@@ -305,9 +305,14 @@ nav .container {
     line-height: 1.8;
 }
 
-.about-text .btn-details {
-    margin-top: 1rem;
+.about-buttons {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
 }
+
 
 /* --- FOOTER --- */
 footer {
@@ -432,4 +437,9 @@ footer {
         margin-right: auto;
     }
 
+    .about-buttons {
+        justify-content: center;
+    }
+
 }
+
