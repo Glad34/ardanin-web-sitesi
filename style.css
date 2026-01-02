@@ -121,8 +121,33 @@ nav .container {
     font-size: 1.1rem;
 }
 
+.page-header {
+    height: 45vh;
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/hero-background.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+.page-header-content h1 {
+    font-size: 3.5rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.page-header-content p {
+    font-size: 1.2rem;
+    color: rgba(255,255,255,0.9);
+}
+
 /* --- PROJELER BÖLÜMÜ --- */
-.projects-section, .faq-section, .about-section {
+.projects-section, .faq-section, .about-section, .services-section {
     padding: 6rem 0;
 }
 
@@ -447,6 +472,42 @@ nav .container {
     gap: 1rem;
 }
 
+/* --- HİZMETLER BÖLÜMÜ --- */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+}
+
+.service-card {
+    background: #fff;
+    border: 1px solid var(--border-color);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.service-icon {
+    font-size: 3rem;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.service-card p {
+    font-size: 1rem;
+    line-height: 1.7;
+}
 
 /* --- FOOTER --- */
 footer {
@@ -553,6 +614,10 @@ footer {
     }
     .hero-text-box .description {
         font-size: 1rem;
+    }
+
+    .page-header-content h1 {
+        font-size: 2.5rem;
     }
 
     .about-content {
