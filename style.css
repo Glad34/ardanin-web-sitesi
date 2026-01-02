@@ -6,29 +6,120 @@
 }
 
 /* Sayfa Temel Stilleri */
-html, body {
+html {
+    scroll-behavior: smooth;
+}
+
+body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
     background-color: #f4f4f4;
     color: #333;
 }
 
-header {
-    background-color: #2c3e50;
+/* Navigation Bar */
+nav {
+    background: rgba(44, 62, 80, 0.9); /* #2c3e50 with transparency */
     color: #ecf0f1;
-    text-align: center;
-    padding: 2rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s;
 }
 
-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
+nav .logo a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav .nav-links a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav .nav-links a:hover {
+    color: #3498db;
+}
+
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background-image: url('https://via.placeholder.com/1920x1080/6c757d/ffffff?text=Modern+Villa');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 0 1rem;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: relative; /* To be on top of the overlay */
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    font-weight: 300;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+}
+
+.hero .btn {
+    background-color: #3498db;
+    color: #fff;
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+    border: 2px solid transparent;
+}
+
+.hero .btn:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
 }
 
 main {
     max-width: 1100px;
-    margin: 2rem auto;
-    padding: 0 1rem;
+    margin: 0 auto;
+    padding: 2rem 1rem;
 }
 
 section {
@@ -37,6 +128,10 @@ section {
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+section:first-of-type {
+    margin-top: 2rem;
 }
 
 h2 {
@@ -131,27 +226,67 @@ h2 {
     color: #34495e;
 }
 
+/* İletişim Bölümü */
+#iletisim {
+    text-align: center;
+    background-color: #ecf0f1;
+}
+
+.iletisim-aciklama {
+    max-width: 600px;
+    margin: 0 auto 1.5rem auto;
+}
+
+.iletisim-bilgileri {
+    line-height: 2;
+    font-size: 1.1rem;
+}
+
+.iletisim-bilgileri p {
+    margin-bottom: 0.5rem;
+}
+
 /* Footer */
 footer {
     text-align: center;
     padding: 1.5rem;
     background-color: #34495e;
     color: #ecf0f1;
-    margin-top: 2rem;
 }
 
 /* Mobil Uyum (Responsive) */
 @media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding: 0.5rem;
+        align-items: center;
+    }
+
+    nav .logo {
+        margin-bottom: 0.5rem;
+    }
+    
+    nav .nav-links {
+        padding: 0;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
     .hakkimda-icerik {
         flex-direction: column;
         text-align: center;
     }
     
-    header h1 {
-        font-size: 2rem;
-    }
-
-    h2 {
+h2 {
         font-size: 1.8rem;
     }
 }
