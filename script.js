@@ -1,19 +1,31 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
+    const faqItems = document.querySelectorAll('.faq-item');
 
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
 
-            if (targetElement) {
-                // Nav bar's height might need to be accounted for if it's not transparent
-                // For this design, direct scroll is fine.
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+        question.addEventListener('click', () => {
+            const answer = item.querySelector('.faq-answer');
+            const icon = question.querySelector('i');
+
+            // Close other open FAQ items
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.querySelector('.faq-answer').style.maxHeight = null;
+                    otherItem.querySelector('.faq-question i').classList.remove('fa-minus');
+                    otherItem.querySelector('.faq-question i').classList.add('fa-plus');
+                }
+            });
+
+            // Toggle the clicked item
+            if (answer.style.maxHeight) {
+                answer.style.maxHeight = null;
+                icon.classList.remove('fa-minus');
+                icon.classList.add('fa-plus');
+            } else {
+                answer.style.maxHeight = answer.scrollHeight + "px";
+                icon.classList.remove('fa-plus');
+                icon.classList.add('fa-minus');
             }
         });
     });

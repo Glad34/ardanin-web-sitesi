@@ -3,92 +3,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ahmet Yılmaz - Gayrimenkul Danışmanı</title>
+    <title>Luxe Realty - Lüks Gayrimenkul Projeleri</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav>
-        <div class="logo">
-            <a href="index.html">Ahmet Yılmaz</a>
-        </div>
-        <ul class="nav-links">
-            <li><a href="index.html">Ana Sayfa</a></li>
-            <li><a href="#hakkimda">Hakkımda</a></li>
-            <li><a href="#portfoy">Portföylerim</a></li>
-            <li><a href="#iletisim">İletişim</a></li>
-        </ul>
-    </nav>
+    <header class="hero-section">
+        <nav>
+            <div class="container">
+                <a href="index.html" class="logo">LUXE REALTY</a>
+                <ul class="nav-links">
+                    <!-- Menü linkleri daha sonra eklenecek -->
+                    <li><a href="#">Projeler</a></li>
+                    <li><a href="#">Hakkımızda</a></li>
+                    <li><a href="#">İletişim</a></li>
+                </ul>
+            </div>
+        </nav>
 
-    <header class="hero">
-        <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1>Hayallerinizdeki Evi Birlikte Bulalım</h1>
-            <p>Profesyonel Gayrimenkul Danışmanlığı</p>
-            <a href="#portfoy" class="btn">Portföylerimi İncele</a>
+            <div class="hero-text-box">
+                <p class="sub-heading">BUR DUBAI</p>
+                <h1>BAE'de Satılık Lüks Konut Projeleri</h1>
+                <p class="description">Dubai'nin en prestijli konumlarında, modern mimari ve eşsiz olanaklarla tasarlanmış lüks konut projelerimizi keşfedin. Hayalinizdeki yaşam alanına kavuşun.</p>
+            </div>
         </div>
     </header>
 
     <main>
-        <section id="hakkimda">
-            <h2>Hakkımda</h2>
-            <div class="hakkimda-icerik">
-                <img src="https://via.placeholder.com/250" alt="Ahmet Yılmaz Portre" class="profil-resmi">
-                <div class="hayat-hikayesi">
-                    <h3>Hayat Hikayem</h3>
-                    <p>İstanbul'da doğup büyüdüm ve 15 yılı aşkın süredir gayrimenkul sektöründe hizmet veriyorum. Müşterilerimin hayallerindeki eve veya yatırıma kavuşmalarını sağlamak benim için bir tutku. Sektördeki tecrübem ve geniş portföyümle, alım, satım ve kiralama süreçlerinizde size en doğru ve güvenilir danışmanlığı sunmak için buradayım. Dürüstlük ve müşteri memnuniyeti en temel prensiplerimdir.</p>
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <div class="section-title">
+                    <p>PORTFÖYÜMÜZ</p>
+                    <h2>Öne Çıkan Projeler</h2>
+                </div>
+
+                <div class="project-list">
+                    <!-- Proje 1 -->
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/800x500/AABBCC/FFFFFF?text=The+S+Tower" alt="The S Tower Projesi">
+                            <span class="new-badge">YENİ</span>
+                        </div>
+                        <div class="project-info">
+                            <h3>The S Tower</h3>
+                            <div class="project-details">
+                                <div class="detail-item">
+                                    <span>Başlangıç Fiyatı</span>
+                                    <strong>AED 15 Milyon</strong>
+                                </div>
+                                <div class="detail-item">
+                                    <span>Alan</span>
+                                    <strong>4,500 m²</strong>
+                                </div>
+                                <div class="detail-item">
+                                    <span>Teslim Tarihi</span>
+                                    <strong>Aralık 2024</strong>
+                                </div>
+                            </div>
+                            <a href="#" class="btn-details">Detayları Görüntüle</a>
+                        </div>
+                    </article>
+
+                    <!-- Proje 2 -->
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/800x500/CCDDEE/FFFFFF?text=Creek+Vistas" alt="Creek Vistas Projesi">
+                        </div>
+                        <div class="project-info">
+                            <h3>Creek Vistas</h3>
+                            <div class="project-details">
+                                <div class="detail-item">
+                                    <span>Başlangıç Fiyatı</span>
+                                    <strong>AED 1.2 Milyon</strong>
+                                </div>
+                                <div class="detail-item">
+                                    <span>Alan</span>
+                                    <strong>750 m²</strong>
+                                </div>
+                                <div class="detail-item">
+                                    <span>Teslim Tarihi</span>
+                                    <strong>Hazır</strong>
+                                </div>
+                            </div>
+                            <a href="#" class="btn-details">Detayları Görüntüle</a>
+                        </div>
+                    </article>
+                     <!-- Proje 3 -->
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/800x500/EEBBCC/FFFFFF?text=Sobha+Hartland" alt="Sobha Hartland Projesi">
+                            <span class="new-badge">YENİ</span>
+                        </div>
+                        <div class="project-info">
+                            <h3>Sobha Hartland</h3>
+                            <div class="project-details">
+                                <div class="detail-item">
+                                    <span>Başlangıç Fiyatı</span>
+                                    <strong>AED 5 Milyon</strong>
+                                </div>
+                                <div class="detail-item">
+                                    <span>Alan</span>
+                                    <strong>2,100 m²</strong>
+                                </div>
+                                <div class="detail-item">
+                                    <span>Teslim Tarihi</span>
+                                    <strong>Haziran 2025</strong>
+                                </div>
+                            </div>
+                            <a href="#" class="btn-details">Detayları Görüntüle</a>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <section id="portfoy">
-            <h2>Portföylerim</h2>
-            <div class="portfoy-galeri">
-                <div class="portfoy-oge">
-                    <img src="https://via.placeholder.com/400x250/AABBCC/FFFFFF?text=Lüks+Villa" alt="Satılık Villa">
-                    <h4>Boğaz Manzaralı Lüks Villa</h4>
-                    <p>Sarıyer, 5+2, Özel Havuzlu</p>
+        <section id="faq" class="faq-section">
+            <div class="container">
+                <div class="section-title">
+                    <p>BİLGİ</p>
+                    <h2>Sıkça Sorulan Sorular</h2>
                 </div>
-                <div class="portfoy-oge">
-                    <img src="https://via.placeholder.com/400x250/CCDDEE/FFFFFF?text=Modern+Daire" alt="Kiralık Daire">
-                    <h4>Merkezi Konumda Modern Daire</h4>
-                    <p>Beşiktaş, 2+1, Eşyalı</p>
-                </div>
-                <div class="portfoy-oge">
-                    <img src="https://via.placeholder.com/400x250/EEBBCC/FFFFFF?text=Yatırımlık+Arsa" alt="Yatırımlık Arsa">
-                    <h4>Gelişen Bölgede Yatırımlık Arsa</h4>
-                    <p>Çekmeköy, 500m², İmarlı</p>
+                <div class="faq-accordion">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Luxe Realty ile mülk satın almanın avantajları nelerdir?</span>
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Luxe Realty olarak, Dubai'nin en seçkin projelerine özel erişim sağlıyor, tüm yasal süreçlerde size rehberlik ediyor ve en iyi yatırım fırsatlarını sunuyoruz. Kişiselleştirilmiş hizmet anlayışımızla hayalinizdeki mülke sorunsuz bir şekilde ulaşmanızı sağlıyoruz.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Yabancı uyruklular Dubai'den mülk satın alabilir mi?</span>
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Evet, yabancı uyruklular Dubai'de hükümet tarafından belirlenen "freehold" olarak adlandırılan bölgelerden mülk satın alabilirler. Portföyümüzdeki projelerin tamamı bu bölgelerde yer almaktadır.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Ödeme planları nasıl işliyor?</span>
+                            <i class="fas fa-plus"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Her projenin kendine özgü esnek ödeme planları bulunmaktadır. Genellikle inşaat süresince taksitler halinde veya proje tesliminde belirli bir yüzde ödeme gibi seçenekler mevcuttur. Detaylı bilgi için danışmanlarımızla iletişime geçebilirsiniz.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="yorumlar">
-            <h2>Müşteri Yorumları</h2>
-            <div class="yorum-listesi">
-                <div class="yorum">
-                    <blockquote>"Ahmet Bey sayesinde tam istediğimiz gibi bir ev bulduk. Süreç boyunca ilgisi ve profesyonelliği için çok teşekkür ederiz."</blockquote>
-                    <cite>- Ayşe K.</cite>
-                </div>
-                <div class="yorum">
-                    <blockquote>"Yatırım için doğru arsayı bulmamda çok yardımcı oldu. Bilgisi ve yönlendirmeleri harikaydı. Kesinlikle tavsiye ederim."</blockquote>
-                    <cite>- Mehmet T.</cite>
-                </div>
-            </div>
-        </section>
-
-        <section id="iletisim">
-            <h2>İletişim</h2>
-            <p class="iletisim-aciklama">Benimle iletişime geçmek, mülkler hakkında bilgi almak veya danışmanlık hizmetlerimden yararlanmak için aşağıdaki bilgileri kullanabilirsiniz.</p>
-            <div class="iletisim-bilgileri">
-                 <p><strong>Telefon:</strong> +90 555 123 45 67</p>
-                 <p><strong>E-posta:</strong> ahmet.yilmaz@gayrimenkuldanismani.com</p>
-                 <p><strong>Adres:</strong> Örnek Mah. Emlak Cad. No:123, Beşiktaş/İstanbul</p>
-            </div>
-        </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Ahmet Yılmaz | Tüm Hakları Saklıdır.</p>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>LUXE REALTY</h4>
+                    <p>Dubai'de lüks ve konforu yeniden tanımlayan, ayrıcalıklı yaşam alanları sunuyoruz.</p>
+                </div>
+                <div class="footer-col">
+                    <h5>Hızlı Linkler</h5>
+                    <ul>
+                        <li><a href="#">Projeler</a></li>
+                        <li><a href="#">Hakkımızda</a></li>
+                        <li><a href="#">Kariyer</a></li>
+                        <li><a href="#">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Bize Ulaşın</h5>
+                    <p>Business Bay, Dubai, BAE</p>
+                    <p>info@luxerealty.ae</p>
+                    <p>+971 4 123 4567</p>
+                </div>
+                <div class="footer-col">
+                    <h5>Bizi Takip Edin</h5>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Luxe Realty. Tüm Hakları Saklıdır.</p>
+            </div>
+        </div>
     </footer>
 
     <script src="script.js"></script>
