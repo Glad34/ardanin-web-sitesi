@@ -3,38 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arda İlci - İzmir Lüks Gayrimenkul Danışmanı</title>
-    <meta name="description" content="İzmir'de satılık daire, villa ve yatırımlık lüks gayrimenkuller için uzman danışmanınız Arda İlci. Güvenilir ve profesyonel hizmet.">
-    <meta name="keywords" content="izmir satılık daire, izmir satılık villa, izmir yatırımlık villa, Arda İlci, Remax İzmir, lüks konut">
+    <title>Arda İlci | İzmir Gayrimenkul Danışmanı - Satılık Daire, Villa</title>
+    <meta name="description" content="Arda İlci ile İzmir'de hayalinizdeki eve veya yatırıma kavuşun. Uzman danışmanlık hizmetiyle İzmir satılık daire, villa ve yatırımlık mülkler.">
+    <meta name="keywords" content="izmir satılık daire, izmir satılık villa, izmir yatırımlık villa, arda ilci, remax, gayrimenkul danışmanı izmir">
+    <meta name="author" content="Arda İlci">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --dark-gray: #2c2c2c;
+            --gold: #daa520;
+            --light-gray: #f4f4f4;
+            --white: #ffffff;
+            --font-main: 'Atkinson Hyperlegible', sans-serif;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            margin: 0;
+            font-family: var(--font-main);
+            background-color: var(--dark-gray);
+            color: var(--light-gray);
+            line-height: 1.6;
+        }
+        a {
+            color: var(--gold);
+            text-decoration: none;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Header bileşeni bu alana yüklenecek -->
-    <header id="header-container"></header>
-
+    <div data-component="components/header.html"></div>
+    
     <main>
-        <!-- Hero bileşeni bu alana yüklenecek -->
-        <section id="hero-container"></section>
+        <div id="home" data-component="components/hero.html"></div>
 
-        <!-- Hizmetlerimiz bileşeni bu alana yüklenecek -->
-        <section id="services-container" class="container"></section>
+        <!-- Diğer bileşenler ve bölümler buraya eklenebilir -->
+        <div id="services" style="height:300px; padding-top:80px; text-align:center;">
+            <h2>Hizmetlerimiz (Placeholder)</h2>
+        </div>
+         <div id="portfolio" style="height:300px; padding-top:80px; text-align:center;">
+            <h2>Portföylerim (Placeholder)</h2>
+        </div>
+        <div id="sold" style="height:300px; padding-top:80px; text-align:center;">
+            <h2>Satılan Portföylerim (Placeholder)</h2>
+        </div>
+        <div id="contact" style="height:300px; padding-top:80px; text-align:center;">
+            <h2>İletişim (Placeholder)</h2>
+        </div>
 
-        <!-- Portföylerim bileşeni bu alana yüklenecek -->
-        <section id="portfolio-container" class="container"></section>
-
-        <!-- Satılan Portföylerim bileşeni bu alana yüklenecek -->
-        <section id="sold-portfolio-container" class="container"></section>
-
-        <!-- İletişim bileşeni bu alana yüklenecek -->
-        <section id="contact-container" class="container"></section>
     </main>
 
-    <!-- Footer bileşeni bu alana yüklenecek -->
-    <footer id="footer-container"></footer>
+    <div data-component="components/footer.html"></div>
 
     <script src="loader.js"></script>
 </body>
