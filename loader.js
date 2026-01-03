@@ -9,14 +9,14 @@ async function loadComponents() {
                 const html = await response.text();
                 el.innerHTML = html;
                 const scripts = el.querySelectorAll('script');
-                scripts.forEach(oldScript => {
-                    const newScript = document.createElement('script');
-                    Array.from(oldScript.attributes).forEach(a => newScript.setAttribute(a.name, a.value));
-                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
-                    oldScript.parentNode.replaceChild(newScript, oldScript);
+                scripts.forEach(s => {
+                    const ns = document.createElement('script');
+                    Array.from(s.attributes).forEach(a => ns.setAttribute(a.name, a.value));
+                    ns.appendChild(document.createTextNode(s.innerHTML));
+                    s.parentNode.replaceChild(ns, s);
                 });
             }
-        } catch (e) { console.error('Bileşen Yüklenemedi:', file); }
+        } catch (e) { console.error('Hata:', file); }
     }
 }
-window.addEventListener('DOMContentLoaded', loadComponents);
+window.onload = loadComponents;

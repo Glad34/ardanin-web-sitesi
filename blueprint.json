@@ -12,7 +12,11 @@
             "header.html",
             "footer.html"
         ],
-        "portfolyo.html": [
+        "portföylerim.html": [
+            "header.html",
+            "footer.html"
+        ],
+        "satılan_portföylerim.html": [
             "header.html",
             "footer.html"
         ],
