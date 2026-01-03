@@ -3,256 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arda İlci - İzmir Gayrimenkul Danışmanlığı</title>
+    <title>Arda İlci | İzmir Satılık Daire, Villa ve Yatırım Danışmanlığı</title>
+    <meta name="description" content="İzmir'de satılık daire, villa veya yatırımlık gayrimenkul mü arıyorsunuz? Güvenilir danışmanınız Arda İlci ile İzmir'deki hayalinizdeki eve kavuşun.">
+    <meta name="keywords" content="izmir satılık daire, izmir satılık villa, izmir yatırımlık villa, arda ilci, gayrimenkul danışmanı izmir">
+    
+    <!-- Google Fonts: Atkinson Hyperlegible -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav>
-        <div class="container">
-            <a href="index.html" class="logo"><img src="assets/arda-ilci-logo.jpg" alt="Arda İlci Logo"><span>ARDA İLCİ</span></a>
-            <ul class="nav-links" id="nav-links">
-                <li><a href="index.html">Ana Sayfa</a></li>
-                <li><a href="index.html#about">Hakkımızda</a></li>
-                <li><a href="hizmetlerimiz.html">Hizmetlerimiz</a></li>
-                <li><a href="index.html#projects">Portföylerimiz</a></li>
-                <li><a href="index.html#contact">İletişim</a></li>
+    <header>
+        <div class="logo">
+            <a href="#">Arda İlci</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#hakkimda">Hakkımda</a></li>
+                <li><a href="#hizmetler">Hizmetlerim</a></li>
+                <li><a href="#portfoy">Portföy</a></li>
+                <li><a href="#iletisim">İletişim</a></li>
             </ul>
-            <button class="mobile-nav-toggle" aria-controls="nav-links" aria-expanded="false">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-    </nav>
-
-    <header class="hero-section">
-        <div class="hero-content">
-            <div class="hero-text-box">
-                <p class="sub-heading">İZMİR, TÜRKİYE</p>
-                <h1>İzmir'de Hayalinizdeki Yaşam Alanları</h1>
-                <p class="description">İzmir'in en gözde lokasyonlarında, modern mimari ve eşsiz olanaklarla tasarlanmış lüks konut projelerini keşfedin. Hayalinizdeki yaşam alanına benimle kavuşun.</p>
-            </div>
-        </div>
+        </nav>
     </header>
 
     <main>
-        <section id="projects" class="projects-section">
-            <div class="container">
-                <div class="section-title">
-                    <p>PORTFÖYÜMÜZ</p>
-                    <h2>Öne Çıkan Gayrimenkuller</h2>
-                </div>
-
-                <div class="project-filters">
-                    <button class="filter-btn active" data-filter="all">Tümü</button>
-                    <button class="filter-btn" data-filter="daire">Daire</button>
-                    <button class="filter-btn" data-filter="mustakil-villa">Müstakil Villa</button>
-                    <button class="filter-btn" data-filter="arsa">Arsa</button>
-                </div>
-
-                <div class="project-list">
-                    <!-- Proje 1 -->
-                    <article class="project-card" data-category="mustakil-villa">
-                        <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=2070&auto=format&fit=crop" alt="Urla Modern Villaları">
-                            <div class="image-overlay-icons">
-                                <a href="#"><i class="far fa-heart"></i></a>
-                                <a href="#"><i class="fas fa-share-alt"></i></a>
-                                <a href="#"><i class="fas fa-map-marker-alt"></i></a>
-                            </div>
-                             <div class="image-overlay-tags">
-                                <span class="tag sale">Satılık</span>
-                                <span class="tag video">Video</span>
-                            </div>
-                        </div>
-                        <div class="project-info">
-                            <div class="project-info-header">
-                                <div>
-                                    <span class="project-category">MÜSTAKİL VİLLA</span>
-                                    <h3 class="project-title">Urla Zen Villaları</h3>
-                                </div>
-                                <a href="#contact" class="project-contact-link">İletişime Geç</a>
-                            </div>
-                            <div class="project-meta">
-                                <span>Ref: 83356</span>
-                                <span>Deniz Manzaralı - Açık Manzaralı</span>
-                            </div>
-                            <div class="project-stats">
-                                <div class="stat-item">
-                                    <i class="fas fa-ruler-combined"></i>
-                                    <span>450 m²</span>
-                                </div>
-                                <div class="stat-item">
-                                    <i class="fas fa-mountain-sun"></i>
-                                    <span>9000 m² Arsa</span>
-                                </div>
-                                <div class="stat-item">
-                                    <i class="fas fa-bed"></i>
-                                    <span>7 Oda</span>
-                                </div>
-                                <div class="stat-item">
-                                    <i class="fas fa-bath"></i>
-                                    <span>5 Banyo</span>
-                                </div>
-                            </div>
-                            <p class="project-description-text">Urla'nın en prestijli bölgesinde, panoramik deniz manzaralı, modern ve şık villa.</p>
-                        </div>
-                    </article>
-
-                    <!-- Proje 2 -->
-                    <article class="project-card" data-category="daire">
-                        <div class="project-image">
-                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop" alt="Folkart Blu Çeşme Projesi">
-                              <div class="image-overlay-icons">
-                                <a href="#"><i class="far fa-heart"></i></a>
-                                <a href="#"><i class="fas fa-share-alt"></i></a>
-                                <a href="#"><i class="fas fa-map-marker-alt"></i></a>
-                            </div>
-                        </div>
-                        <div class="project-info">
-                             <div class="project-info-header">
-                                <div>
-                                    <span class="project-category">DAİRE</span>
-                                    <h3 class="project-title">Folkart Blu Çeşme</h3>
-                                </div>
-                                <a href="#contact" class="project-contact-link">İletişime Geç</a>
-                            </div>
-                            <div class="project-meta">
-                                <span>Ref: 91023</span>
-                                <span>Denize Sıfır</span>
-                            </div>
-                            <div class="project-stats">
-                                <div class="stat-item">
-                                    <i class="fas fa-ruler-combined"></i>
-                                    <span>250 m²</span>
-                                </div>
-                                <div class="stat-item">
-                                    <i class="fas fa-swimming-pool"></i>
-                                    <span>Ortak Havuz</span>
-                                </div>
-                                <div class="stat-item">
-                                    <i class="fas fa-bed"></i>
-                                    <span>4+1</span>
-                                </div>
-                                <div class="stat-item">
-                                    <i class="fas fa-bath"></i>
-                                    <span>3 Banyo</span>
-                                </div>
-                            </div>
-                             <p class="project-description-text">Çeşme'nin kalbinde, eşsiz olanaklara sahip lüks rezidans dairesi.</p>
-                        </div>
-                    </article>
-                </div>
+        <section class="hero">
+            <div class="hero-background">
+                <picture>
+                    <!-- Masaüstü için GIF -->
+                    <source srcset="https://via.placeholder.com/1920x1080.gif/2c3e50/D4AF37?text=Desktop+GIF" media="(min-width: 768px)">
+                    <!-- Mobil için GIF (Placeholder - Kendi GIF'lerinizle değiştirin) -->
+                    <img src="https://via.placeholder.com/767x1024.gif/2c3e50/D4AF37?text=Mobile+GIF" alt="İzmir satılık lüks villa ve daireler">
+                </picture>
+            </div>
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1 id="typewriter-text"></h1>
+                <a href="#iletisim" class="cta-button">Temasa Geç</a>
             </div>
         </section>
-
-        <section id="faq" class="faq-section">
-            <div class="container">
-                <div class="section-title">
-                    <p>BİLGİ</p>
-                    <h2>Sıkça Sorulan Sorular</h2>
-                </div>
-                <div class="faq-accordion">
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span>Arda İlci ile mülk satın almanın avantajları nelerdir?</span>
-                            <i class="fas fa-plus"></i>
-                        </button>
-                        <div class="faq-answer">
-                            <p>İzmir'in en seçkin projelerine özel erişim sağlıyor, tüm yasal süreçlerde size rehberlik ediyor ve en iyi yatırım fırsatlarını sunuyorum. Kişiselleştirilmiş hizmet anlayışımla hayalinizdeki mülke sorunsuz bir şekilde ulaşmanızı sağlıyorum.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span>Yatırım için hangi bölgeleri önerirsiniz?</span>
-                            <i class="fas fa-plus"></i>
-                        </button>
-                        <div class="faq-answer">
-                            <p>İzmir'de yatırım potansiyeli yüksek birçok bölge bulunmaktadır. Urla, Çeşme, Seferihisar gibi sahil bölgeleri değer artışıyla öne çıkarken; Bornova ve Karşıyaka gibi merkezi konumlar da her zaman talep görmektedir. Yatırım hedeflerinize göre size özel analizler sunabilirim.</p>
-                        </div>
-                    </div>
-                    <div class="faq-item">
-                        <button class="faq-question">
-                            <span>Ödeme planları nasıl işliyor?</span>
-                            <i class="fas fa-plus"></i>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Her projenin kendine özgü esnek ödeme planları bulunmaktadır. Genellikle inşaat süresince taksitler halinde veya proje tesliminde belirli bir yüzde ödeme gibi seçenekler mevcuttur. Detaylı bilgi için benimle iletişime geçebilirsiniz.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="about-section">
-            <div class="container">
-                <div class="section-title">
-                    <p>BENİ TANIYIN</p>
-                    <h2>Hakkımızda</h2>
-                </div>
-                <div class="about-content">
-                    <div class="about-image">
-                        <img src="https://via.placeholder.com/500x600/BFA17D/FFFFFF?text=Arda+İlci" alt="Arda İlci">
-                    </div>
-                    <div class="about-text">
-                        <h3>Arda İlci</h3>
-                        <h4>İzmir Gayrimenkul Uzmanı</h4>
-                        <p>Uzun yıllardır gayrimenkul sektöründe, özellikle İzmir ve Ege Bölgesi'nde uzmanlaşmış bir danışmanım. Müşterilerimin hayallerindeki mülke en doğru ve karlı şekilde ulaşmalarını sağlamak benim önceliğimdir.</p>
-                        <p>Modern pazarlama teknikleri, geniş network ağım ve bölgeye olan hakimiyetimle, alım-satım ve kiralama süreçlerinizin tamamında şeffaf, güvenilir ve sonuç odaklı bir hizmet sunuyorum. Lüks konutlardan ticari mülklere, arsalardan yatırım projelerine kadar geniş bir portföyde sizlere destek olmaktan mutluluk duyarım.</p>
-                        <div class="about-buttons">
-                            <a href="#contact" class="btn-details">İletişime Geçin</a>
-                            <a href="hizmetlerimiz.html" class="btn-details">Daha Fazla Bilgi</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
     </main>
 
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4>ARDA İLCİ</h4>
-                    <p>İzmir'de lüks ve konforu yeniden tanımlayan, ayrıcalıklı yaşam alanları bulmanız için buradayım.</p>
-                </div>
-                <div class="footer-col">
-                    <h5>Hızlı Linkler</h5>
-                    <ul>
-                        <li><a href="index.html">Ana Sayfa</a></li>
-                        <li><a href="hizmetlerimiz.html">Hizmetlerimiz</a></li>
-                        <li><a href="index.html#projects">Portföylerimiz</a></li>
-                        <li><a href="index.html#about">Hakkımızda</a></li>
-                        <li><a href="index.html#faq">SSS</a></li>
-                        <li><a href="index.html#contact">İletişim</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h5>Bana Ulaşın</h5>
-                    <p>Alsancak, İzmir, Türkiye</p>
-                    <p>arda.ilci@emlak.com</p>
-                    <p>+90 555 123 4567</p>
-                </div>
-                <div class="footer-col">
-                    <h5>Beni Takip Edin</h5>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Arda İlci. Tüm Hakları Saklıdır.</p>
-            </div>
-        </div>
-    </footer>
-
     <script src="script.js"></script>
+
 </body>
 </html>
