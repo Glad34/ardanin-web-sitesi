@@ -7,11 +7,11 @@
         ]
     },
     "style": {
-        "style": "Luxury",
+        "style_name": "Luxury",
         "colors_fonts": "Koyu gri ve altın, yazı tipi Atkinson Hyperlegible Mono",
         "menu_type": "Sticky",
         "scope": "Bu proje bir Remax Gayrimenkul Danışmanı olan \"Arda İlci\" ye ait bir web site olucak. Menü mobil görünümde hamburger menü olsun ve tıklyınca., Ana sayfa, Hizmetlerimiz, İletişim, Portföylerim ,Satılan Portföylerim gibi.",
         "seo": "Hedef kitle 35-75 yaş aralığı, İlgi alanları ev alım satım veya yatırım, seo arama terimelri izmir satılık daire,izmir satılık villa, izmir yatırımlık villa",
-        "hero": "Büyük bir resim,mobil ve masa üstünde ayrı ayrı olucak şekilde bir GIF resim ekliycem. Bu GIF resmin üzerinde beyaz yazı ile type wrıter olark \"Arda İlci İzmir'deki Gayrimenkul Danışmanınız\" yazısı gelecek. ve temasa geç butonu olucak."
+        "hero_info": "Büyük bir resim,mobil ve masa üstünde ayrı ayrı olucak şekilde bir GIF resim ekliycem. Bu GIF resmin üzerinde beyaz yazı ile type wrıter olark \"Arda İlci İzmir'deki Gayrimenkul Danışmanınız\" yazısı gelecek. ve temasa geç butonu olucak."
     }
 }
