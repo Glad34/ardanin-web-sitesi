@@ -1,4 +1,152 @@
-<div class="main-header">
+<!--
+    Luxury Header Bileşeni
+    Stil: Koyu gri ve altın renk şeması, Atkinson Hyperlegible Mono yazı tipi.
+    İşlevsellik: Tamamen duyarlı (responsive) gezinme menüsü.
+    - Masaüstünde yatay menü.
+    - Mobilde hamburger menü ile açılıp kapanan dikey menü.
+-->
+
+<!-- Stil Tanımlamaları -->
+<style>
+    /* Google Fonts'tan Atkinson Hyperlegible yazı tipini dahil et */
+    @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap');
+
+    /* Renk ve Font Değişkenleri */
+    :root {
+        --dark-grey: #2c2c2c; /* Lüks ve ciddi bir ton */
+        --gold: #D4AF37;      /* Altın rengi, lüks vurgusu */
+        --light-text: #f0f0f0; /* Okunabilirlik için açık renk metin */
+        --header-font: 'Atkinson Hyperlegible', monospace;
+    }
+
+    .main-header {
+        background-color: var(--dark-grey);
+        padding: 1rem 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 90%; /* padding ile 100% olur */
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .main-header .logo {
+        font-family: var(--header-font);
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: var(--gold);
+        text-decoration: none;
+        letter-spacing: 1px;
+        transition: transform 0.3s ease;
+    }
+    .main-header .logo:hover {
+        transform: scale(1.05);
+    }
+
+    .main-header .main-nav ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        gap: 2.5rem; /* Menü öğeleri arası boşluk */
+    }
+
+    .main-header .main-nav a {
+        font-family: var(--header-font);
+        color: var(--light-text);
+        text-decoration: none;
+        font-size: 1rem;
+        position: relative;
+        padding-bottom: 5px;
+        transition: color 0.3s ease;
+    }
+
+    .main-header .main-nav a:hover {
+        color: var(--gold);
+    }
+
+    /* Hover efekti için alttan çıkan çizgi */
+    .main-header .main-nav a::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        display: block;
+        margin-top: 5px;
+        right: 0;
+        background: var(--gold);
+        transition: width 0.4s ease;
+    }
+
+    .main-header .main-nav a:hover::after {
+        width: 100%;
+        left: 0;
+        background: var(--gold);
+    }
+
+    /* Mobil menü butonu (hamburger) */
+    .mobile-menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        z-index: 1001;
+    }
+
+    .mobile-menu-toggle span {
+        display: block;
+        width: 28px;
+        height: 3px;
+        background-color: var(--light-text);
+        margin: 6px 0;
+        transition: all 0.3s ease-in-out;
+        border-radius: 2px;
+    }
+
+    /* Responsive Tasarım (Tablet ve Telefonlar için) */
+    @media (max-width: 992px) {
+        .main-header .main-nav {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 80%; /* Menü genişliği */
+            max-width: 350px;
+            height: 100vh;
+            background-color: rgba(44, 44, 44, 0.98); /* Hafif transparan arka plan */
+            backdrop-filter: blur(8px); /* Arka planı bulanıklaştır (iOS stili) */
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main-header .main-nav.active {
+            transform: translateX(0);
+        }
+
+        .main-header .main-nav ul {
+            flex-direction: column;
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .main-header .main-nav a {
+            font-size: 1.5rem;
+        }
+
+        .mobile-menu-toggle {
+            display: block;
+        }
+    }
+</style>
+
+<!-- HTML İçeriği -->
+<header class="main-header">
     <a href="#" class="logo">ARDA İLCİ</a>
     <nav class="main-nav">
         <ul>
@@ -9,4 +157,39 @@
             <li><a href="#contact-container">İletişim</a></li>
         </ul>
     </nav>
-</div>
+    <!-- Mobil Cihazlar İçin Hamburger Menü Butonu -->
+    <button class="mobile-menu-toggle" aria-label="Menüyü aç/kapat">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+</header>
+
+<!-- JavaScript Olayları -->
+<script>
+    // DOM içeriği tamamen yüklendikten sonra script'i çalıştır
+    document.addEventListener('DOMContentLoaded', () => {
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const mainNav = document.querySelector('.main-nav');
+        const navLinks = document.querySelectorAll('.main-nav a');
+
+        // Menü butonu ve navigasyon elemanlarının varlığını kontrol et
+        if (menuToggle && mainNav) {
+            // Hamburger menü butonuna tıklama olayı
+            menuToggle.addEventListener('click', () => {
+                // 'active' class'ını ekleyerek/kaldırarak menüyü aç/kapat
+                mainNav.classList.toggle('active');
+            });
+        }
+
+        // Mobil menüdeki bir linke tıklandığında menünün otomatik kapanması için
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                // Eğer mobil menü açıksa ('active' class'ına sahipse) kapat
+                if (mainNav.classList.contains('active')) {
+                    mainNav.classList.remove('active');
+                }
+            });
+        });
+    });
+</script>
