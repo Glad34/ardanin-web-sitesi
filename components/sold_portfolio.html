@@ -1,0 +1,58 @@
+<style>
+    .sold-portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
+    .sold-property-card {
+        position: relative;
+        filter: grayscale(80%);
+    }
+    .sold-banner {
+        position: absolute;
+        top: 20px;
+        right: -30px;
+        background-color: var(--gold);
+        color: var(--dark-gray);
+        padding: 5px 40px;
+        font-weight: 700;
+        transform: rotate(45deg);
+        box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        z-index: 2;
+    }
+</style>
+<section id="satilan-portfolyo" style="background-color: var(--light-gray);">
+    <h2 class="section-title">Satılan Portföylerim</h2>
+    <div class="sold-portfolio-grid">
+        <!-- Placeholder Card 1 -->
+        <div class="property-card sold-property-card">
+            <div class="sold-banner">SATILDI</div>
+            <img src="https://via.placeholder.com/400x250/999999/000000/?text=Satılan+Konak" alt="Satılmış Konak">
+            <div class="property-details">
+                <h3>Bornova'da Tarihi Konak</h3>
+                <p class="location">İzmir, Bornova</p>
+                <p class="price">--.--.--- ₺</p>
+            </div>
+        </div>
+        <!-- Placeholder Card 2 -->
+        <div class="property-card sold-property-card">
+            <div class="sold-banner">SATILDI</div>
+            <img src="https://via.placeholder.com/400x250/999999/000000/?text=Satılan+Daire" alt="Satılmış Daire">
+            <div class="property-details">
+                <h3>Göztepe'de Sahil Dairesi</h3>
+                <p class="location">İzmir, Konak</p>
+                <p class="price">--.--.--- ₺</p>
+            </div>
+        </div>
+        <!-- Placeholder Card 3 -->
+        <div class="property-card sold-property-card">
+            <div class="sold-banner">SATILDI</div>
+            <img src="https://via.placeholder.com/400x250/999999/000000/?text=Satılan+Yazlık" alt="Satılmış Yazlık">
+            <div class="property-details">
+                <h3>Seferihisar'da Bahçeli Yazlık</h3>
+                <p class="location">İzmir, Seferihisar</p>
+                <p class="price">--.--.--- ₺</p>
+            </div>
+        </div>
+    </div>
+</section>

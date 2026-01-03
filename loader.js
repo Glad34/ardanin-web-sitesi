@@ -1,15 +1,14 @@
 
 async function loadComponents() {
-    console.log("Bileşen yükleyici başlatıldı...");
     const elements = document.querySelectorAll('[data-component]');
     for (const el of elements) {
         const file = el.getAttribute('data-component');
-        console.log("Yükleniyor:", file);
         try {
             const response = await fetch(file);
             if (response.ok) {
                 const html = await response.text();
                 el.innerHTML = html;
+                // Script Injection
                 const scripts = el.querySelectorAll('script');
                 scripts.forEach(oldScript => {
                     const newScript = document.createElement('script');
@@ -17,8 +16,8 @@ async function loadComponents() {
                     newScript.appendChild(document.createTextNode(oldScript.innerHTML));
                     oldScript.parentNode.replaceChild(newScript, oldScript);
                 });
-            } else { console.error("Dosya bulunamadı:", file); }
-        } catch (e) { console.error("Yükleme hatası:", file, e); }
+            }
+        } catch (e) { console.error('Hata:', file); }
     }
 }
-window.onload = loadComponents;
+window.addEventListener('DOMContentLoaded', loadComponents);

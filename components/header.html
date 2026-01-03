@@ -1,28 +1,105 @@
-<header class="sticky-header">
-    <nav class="navbar">
-        <a href="#" class="logo">Arda İlci | REMAX</a>
-        <ul class="nav-links">
+<style>
+    .main-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        background-color: var(--dark-gray);
+        color: var(--white);
+        position: sticky;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+    .logo a {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--gold);
+        text-decoration: none;
+    }
+    .main-nav ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    .main-nav li {
+        margin-left: 2rem;
+    }
+    .main-nav a {
+        color: var(--white);
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 700;
+        padding: 5px 0;
+        border-bottom: 2px solid transparent;
+        transition: color 0.3s, border-color 0.3s;
+    }
+    .main-nav a:hover, .main-nav a.active {
+        color: var(--gold);
+        border-bottom-color: var(--gold);
+    }
+    .hamburger-menu {
+        display: none;
+        cursor: pointer;
+        flex-direction: column;
+        gap: 5px;
+    }
+    .hamburger-menu span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: var(--white);
+        transition: all 0.3s ease-in-out;
+    }
+    @media (max-width: 768px) {
+        .main-nav ul {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: var(--dark-gray);
+            text-align: center;
+        }
+        .main-nav ul.active {
+            display: flex;
+        }
+        .main-nav li {
+            margin: 1rem 0;
+        }
+        .hamburger-menu {
+            display: flex;
+        }
+        .hamburger-menu.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .hamburger-menu.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger-menu.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+    }
+</style>
+<header class="main-header">
+    <div class="logo">
+        <a href="#">Arda İlci</a>
+    </div>
+    <nav class="main-nav">
+        <ul>
             <li><a href="#">Ana Sayfa</a></li>
-            <li><a href="#">Hizmetlerimiz</a></li>
-            <li><a href="#">Portföylerim</a></li>
-            <li><a href="#">Satılan Portföylerim</a></li>
-            <li><a href="#">İletişim</a></li>
+            <li><a href="#hizmetler">Hizmetlerimiz</a></li>
+            <li><a href="#portfolyo">Portföylerim</a></li>
+            <li><a href="#satilan-portfolyo">Satılan Portföylerim</a></li>
+            <li><a href="#iletisim">İletişim</a></li>
         </ul>
-        <div class="hamburger">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </div>
     </nav>
+    <div class="hamburger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
 </header>
-
-<script>
-    // Bu script sadece bu bileşen yüklendiğinde çalışır.
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navLinks.classList.toggle('active');
-    });
-</script>
