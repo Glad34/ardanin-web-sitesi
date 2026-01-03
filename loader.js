@@ -16,7 +16,7 @@ async function loadComponents() {
                     oldScript.parentNode.replaceChild(newScript, oldScript);
                 });
             }
-        } catch (e) { console.error('Bileşen Hatası:', file); }
+        } catch (e) { console.error('Hata:', file); }
     }
 }
 window.addEventListener('DOMContentLoaded', loadComponents);
