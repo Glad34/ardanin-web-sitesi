@@ -1,4 +1,38 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // --- MOBİL NAVİGASYON --- 
+    const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    const toggleIcon = mobileNavToggle.querySelector('i');
+
+    if (mobileNavToggle) {
+        mobileNavToggle.addEventListener('click', () => {
+            const isVisible = navLinks.classList.toggle('nav-open');
+            mobileNavToggle.setAttribute('aria-expanded', isVisible);
+            
+            if (isVisible) {
+                toggleIcon.classList.remove('fa-bars');
+                toggleIcon.classList.add('fa-times');
+            } else {
+                toggleIcon.classList.remove('fa-times');
+                toggleIcon.classList.add('fa-bars');
+            }
+        });
+    }
+
+    // Menü linkine tıklandığında menüyü kapat
+    if (navLinks) {
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (navLinks.classList.contains('nav-open')) {
+                    navLinks.classList.remove('nav-open');
+                    mobileNavToggle.setAttribute('aria-expanded', 'false');
+                    toggleIcon.classList.remove('fa-times');
+                    toggleIcon.classList.add('fa-bars');
+                }
+            });
+        });
+    }
+
     // --- FAQ ACCORDION LOGIC ---
     const faqItems = document.querySelectorAll('.faq-item');
 
