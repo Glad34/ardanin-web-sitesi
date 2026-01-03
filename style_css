@@ -1,0 +1,194 @@
+/* --- Google Font Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+/* --- Değişkenler ve Temel Ayarlar --- */
+:root {
+    --dark-gray: #222222;
+    --gold: #D4AF37;
+    --light-gray: #f4f4f4;
+    --font-main: 'Atkinson Hyperlegible', monospace;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--dark-gray);
+    color: var(--light-gray);
+    line-height: 1.6;
+}
+
+/* --- Header ve Navigasyon --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    background-color: rgba(34, 34, 34, 0.85);
+    border-bottom: 2px solid var(--gold);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.logo a {
+    color: var(--gold);
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 2rem;
+}
+
+nav ul li a {
+    color: var(--light-gray);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 700;
+    padding-bottom: 5px;
+    transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: var(--gold);
+    border-bottom: 2px solid var(--gold);
+}
+
+/* --- Hero Bölümü --- */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--light-gray);
+    position: relative;
+    overflow: hidden;
+    /* DEĞİŞTİR: Masaüstü GIF yolunu buraya ekleyin */
+    background: url('images/desktop-hero.gif') no-repeat center center/cover;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    min-height: 100px; /* Typewriter için yer ayır */
+}
+
+/* Typewriter imleci */
+.typewriter-cursor {
+    display: inline-block;
+    background-color: var(--gold);
+    margin-left: 0.1rem;
+    width: 3px;
+    animation: blink 1s infinite;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--gold);
+    color: var(--dark-gray);
+    padding: 1rem 2.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border: 2px solid var(--gold);
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: transparent;
+    color: var(--gold);
+    transform: translateY(-5px);
+}
+
+/* --- Animasyonlar --- */
+@keyframes blink {
+    0% { background-color: var(--gold); }
+    49% { background-color: var(--gold); }
+    50% { background-color: transparent; }
+    99% { background-color: transparent; }
+    100% { background-color: var(--gold); }
+}
+
+/* --- Diğer Sayfalar İçin Genel İçerik Stili --- */
+.page-header {
+    padding-top: 150px; /* Header yüksekliği kadar boşluk bırak */
+    padding-bottom: 50px;
+    text-align: center;
+    border-bottom: 1px solid #444;
+}
+
+.page-header h1 {
+    font-size: 3rem;
+    color: var(--gold);
+}
+
+.page-content {
+    padding: 50px 5%;
+    max-width: 960px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+
+/* --- Responsive Tasarım --- */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 1rem 5%;
+    }
+    nav ul {
+        padding-top: 1rem;
+        margin: 0;
+    }
+    nav ul li {
+      margin: 0 0.8rem;
+    }
+    .hero {
+        /* DEĞİŞTİR: Mobil GIF yolunu buraya ekleyin */
+        background-image: url('images/mobile-hero.gif');
+    }
+    .hero h1 {
+        font-size: 2.5rem;
+        min-height: 80px;
+    }
+    .page-header {
+        padding-top: 200px; /* Mobil header yüksekliği için ayarla */
+    }
+}

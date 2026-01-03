@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Satılan Portföylerim - Arda İlci</title>
+    <meta name="description" content="Arda İlci tarafından başarıyla sonuçlandırılmış gayrimenkul satışları. Referanslarımız ve başarı hikayelerimiz.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">ARDA İLCİ</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Ana Sayfa</a></li>
+                <li><a href="hizmetlerimiz.html">Hizmetlerimiz</a></li>
+                <li><a href="portfoylerim.html">Portföylerim</a></li>
+                <li><a href="satilan-portfoylerim.html">Satılan Portföylerim</a></li>
+                <li><a href="iletisim.html">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <h1>Satılan Portföylerim</h1>
+        </section>
+        <section class="page-content">
+            <p>Bu sayfa şu anda yapım aşamasındadır. Başarıyla tamamlanan satış referanslarım için lütfen benimle iletişime geçin.</p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
