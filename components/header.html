@@ -1,19 +1,28 @@
-<header class="site-header sticky-header">
-    <div class="container">
-        <a href="/" class="site-logo">Arda İlci</a>
-        <nav class="main-navigation">
-            <button class="hamburger-menu" aria-label="Menüyü Aç/Kapat" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="menu-items">
-                <li><a href="/">Ana sayfa</a></li>
-                <li><a href="/hizmetlerimiz">Hizmetlerimiz</a></li>
-                <li><a href="/portfoylerim">Portföylerim</a></li>
-                <li><a href="/satilan-portfoyler">Satılan Portföylerim</a></li>
-                <li><a href="/iletisim">İletişim</a></li>
-            </ul>
-        </nav>
-    </div>
+<header class="sticky-header">
+    <nav class="navbar">
+        <a href="#" class="logo">Arda İlci | REMAX</a>
+        <ul class="nav-links">
+            <li><a href="#">Ana Sayfa</a></li>
+            <li><a href="#">Hizmetlerimiz</a></li>
+            <li><a href="#">Portföylerim</a></li>
+            <li><a href="#">Satılan Portföylerim</a></li>
+            <li><a href="#">İletişim</a></li>
+        </ul>
+        <div class="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </nav>
 </header>
+
+<script>
+    // Bu script sadece bu bileşen yüklendiğinde çalışır.
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navLinks.classList.toggle('active');
+    });
+</script>

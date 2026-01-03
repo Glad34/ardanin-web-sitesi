@@ -1,15 +1,25 @@
-<section class="hero-section">
-    <picture class="hero-background">
-        <!-- Mobil için GIF -->
-        <source media="(max-width: 768px)" srcset="assets/images/hero-mobile.gif">
-        <!-- Masaüstü için GIF -->
-        <source media="(min-width: 769px)" srcset="assets/images/hero-desktop.gif">
-        <img src="assets/images/hero-desktop.gif" alt="İzmir'de lüks gayrimenkul yatırımları">
-    </picture>
-    <div class="hero-overlay">
-        <div class="hero-content">
-            <h1 class="typewriter">Arda İlci İzmir'deki Gayrimenkul Danışmanınız</h1>
-            <a href="/iletisim" class="cta-button">Temasa Geç</a>
-        </div>
+<section class="hero">
+    <div class="hero-background"></div>
+    <div class="hero-content">
+        <h1 id="typewriter"></h1>
+        <a href="#" class="cta-button">Temasa Geç</a>
     </div>
 </section>
+
+<script>
+    // Bu script sadece bu bileşen yüklendiğinde çalışır.
+    const textToType = "Arda İlci, İzmir'deki Gayrimenkul Danışmanınız";
+    const typewriterElement = document.getElementById('typewriter');
+    let i = 0;
+
+    function typeWriter() {
+        if (i < textToType.length) {
+            typewriterElement.innerHTML += textToType.charAt(i);
+            i++;
+            setTimeout(typeWriter, 100); // Yazma hızı (ms)
+        }
+    }
+
+    // Animasyonu başlat
+    typeWriter();
+</script>
