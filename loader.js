@@ -8,16 +8,15 @@ async function loadComponents() {
             if (response.ok) {
                 const html = await response.text();
                 el.innerHTML = html;
-                // Script Injection
                 const scripts = el.querySelectorAll('script');
                 scripts.forEach(oldScript => {
                     const newScript = document.createElement('script');
-                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    Array.from(oldScript.attributes).forEach(a => newScript.setAttribute(a.name, a.value));
                     newScript.appendChild(document.createTextNode(oldScript.innerHTML));
                     oldScript.parentNode.replaceChild(newScript, oldScript);
                 });
             }
-        } catch (e) { console.error('Hata:', file); }
+        } catch (e) { console.error('Bileşen Yüklenemedi:', file); }
     }
 }
 window.addEventListener('DOMContentLoaded', loadComponents);
