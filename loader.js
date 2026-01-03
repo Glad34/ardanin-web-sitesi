@@ -19,4 +19,4 @@ async function loadComponents() {
         } catch (e) { console.error('Hata:', file); }
     }
 }
-window.onload = loadComponents;
+window.addEventListener('DOMContentLoaded', loadComponents);

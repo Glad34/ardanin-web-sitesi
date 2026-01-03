@@ -4,19 +4,11 @@
             "header.html",
             "footer.html"
         ],
-        "ana_sayfa.html": [
-            "header.html",
-            "footer.html"
-        ],
         "hizmetler.html": [
             "header.html",
             "footer.html"
         ],
-        "portföylerim.html": [
-            "header.html",
-            "footer.html"
-        ],
-        "satılan_portföylerim.html": [
+        "portfolyo.html": [
             "header.html",
             "footer.html"
         ],
