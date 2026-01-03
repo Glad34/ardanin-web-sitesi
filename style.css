@@ -62,11 +62,22 @@ nav .container {
 
 .logo {
     font-family: var(--heading-font);
-    font-size: 1.8rem;
-    color: var(--primary-color); /* Beyaz arkaplan için renk değişimi */
+    font-size: 1.6rem;
+    color: var(--primary-color);
     text-decoration: none;
     font-weight: 700;
     letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
 }
 
 .nav-links {
@@ -601,6 +612,10 @@ footer {
     .about-text h3 {
         font-size: 2rem;
     }
+
+    .logo {
+        font-size: 1.4rem;
+    }
 }
 
 @media (max-width: 768px) {
@@ -686,4 +701,9 @@ footer {
         gap: 10px;
         align-items: flex-start;
     }
+
+    .logo span {
+        display: none; /* Mobilde sadece fotoğraf görünsün */
+    }
 }
+
