@@ -1,0 +1,92 @@
+<style>
+    .hero-section {
+        position: relative;
+        height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        overflow: hidden;
+    }
+    .hero-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+    }
+    .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.6);
+        z-index: 2;
+    }
+    .hero-content {
+        position: relative;
+        z-index: 3;
+        color: #fff;
+        padding: 1rem;
+    }
+    .hero-title {
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+        min-height: 1.2em; /* Yazı yazılırken zıplamayı önler */
+    }
+    .cta-button {
+        background-color: var(--gold);
+        color: var(--dark-grey);
+        padding: 0.8rem 2rem;
+        border-radius: 5px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .cta-button:hover {
+        color: #000;
+        transform: translateY(-3px);
+        box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+    }
+</style>
+
+<section class="hero-section">
+    <picture>
+        <!-- Mobil için GIF -->
+        <source media="(max-width: 768px)" srcset="https://via.placeholder.com/800x600.gif/000000/FFFFFF?text=Mobile+GIF">
+        <!-- Masaüstü için GIF -->
+        <img class="hero-background" src="https://via.placeholder.com/1920x1080.gif/000000/FFFFFF?text=Desktop+GIF" alt="İzmir manzaralı lüks bir konut">
+    </picture>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1 id="typewriter-text" class="hero-title"></h1>
+        <a href="iletisim.html" class="cta-button">Temasa Geç</a>
+    </div>
+</section>
+
+<script>
+    // Typewriter efekti scripti
+    const textToType = "Arda İlci, İzmir'deki Gayrimenkul Danışmanınız";
+    const targetElement = document.getElementById('typewriter-text');
+    let charIndex = 0;
+
+    function typeWriter() {
+        if (charIndex < textToType.length && targetElement) {
+            targetElement.textContent += textToType.charAt(charIndex);
+            charIndex++;
+            setTimeout(typeWriter, 100);
+        }
+    }
+
+    // Script yüklendiğinde efekti başlat
+    if (targetElement) {
+        typeWriter();
+    } else {
+        console.error('Typewriter hedef elementi bulunamadı.');
+    }
+</script>

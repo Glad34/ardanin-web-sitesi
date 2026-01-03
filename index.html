@@ -3,39 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arda İlci - İzmir Remax Gayrimenkul Danışmanı</title>
-    <meta name="description" content="İzmir'de satılık daire, villa ve yatırımlık gayrimenkuller için profesyonel danışmanınız Arda İlci. Güvenilir ve lüks hizmet.">
-    <meta name="keywords" content="izmir satılık daire, izmir satılık villa, izmir yatırımlık villa, Arda İlci, Remax İzmir, gayrimenkul danışmanı">
+    <title>Arda İlci - İzmir Lüks Gayrimenkul Danışmanı | Remax</title>
+    <meta name="description" content="İzmir'de satılık daire, villa ve yatırımlık gayrimenkul arayışınızda profesyonel danışmanınız Arda İlci. Lüks konut ve yatırım fırsatları için güvenilir adres.">
+    <meta name="keywords" content="izmir satılık daire, izmir satılık villa, izmir yatırımlık villa, Arda İlci, Remax İzmir, lüks konut">
+
+    <!-- Google Fonts: Atkinson Hyperlegible -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Global Stiller ve Değişkenler */
+        :root {
+            --dark-grey: #2c2c2c; 
+            --gold: #D4AF37;       
+            --light-text: #f0f0f0;
+            --font-main: 'Atkinson Hyperlegible', monospace;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--dark-grey);
+            color: var(--light-text);
+            font-family: var(--font-main);
+            line-height: 1.6;
+        }
+
+        a {
+            color: var(--gold);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #fff;
+        }
+        
+        main {
+            padding: 2rem;
+            min-height: 50vh;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <a href="index.html">Arda İlci</a>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Ana Sayfa</a></li>
-                <li><a href="hizmetlerimiz.html">Hizmetlerimiz</a></li>
-                <li><a href="portfoylerim.html">Portföylerim</a></li>
-                <li><a href="satilan-portfoylerim.html">Satılan Portföylerim</a></li>
-                <li><a href="iletisim.html">İletişim</a></li>
-            </ul>
-        </nav>
-    </header>
 
+    <!-- Header Bileşeni -->
+    <div data-component="components/header.html"></div>
+
+    <!-- Hero Alanı Bileşeni -->
+    <div data-component="components/hero.html"></div>
+
+    <!-- Sayfa İçeriği -->
     <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h1 id="typewriter"></h1>
-                <a href="iletisim.html" class="cta-button">Temasa Geç</a>
-            </div>
-        </section>
+        <h1>İzmir'deki Yatırım Fırsatları ve Lüks Konutlar</h1>
+        <p>Hayalinizdeki eve veya en karlı yatırıma ulaşmanız için buradayım. İzmir'in en seçkin portföylerini keşfetmek için doğru yerdesiniz.</p>
     </main>
 
-    <script src="script.js"></script>
+    <!-- Footer Bileşeni -->
+    <div data-component="components/footer.html"></div>
+
+    <!-- Bileşen Yükleyici Script -->
+    <script src="loader.js"></script>
+
 </body>
 </html>

@@ -1,0 +1,68 @@
+<style>
+    .site-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        background-color: rgba(0,0,0,0.5);
+        border-bottom: 1px solid var(--gold);
+    }
+    .site-header .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #fff;
+    }
+    .site-header .logo a {
+        color: #fff;
+    }
+    .site-header .logo span {
+        color: var(--gold);
+        font-size: 1.2rem;
+    }
+    .main-nav ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 1.5rem;
+    }
+    .main-nav a {
+        color: var(--light-text);
+        font-weight: 400;
+        padding-bottom: 5px;
+        border-bottom: 2px solid transparent;
+        transition: all 0.3s ease;
+    }
+    .main-nav a:hover, .main-nav a.active {
+        color: var(--gold);
+        border-bottom-color: var(--gold);
+    }
+
+    /* Mobil için */
+    @media (max-width: 768px) {
+        .site-header {
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .main-nav ul {
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+    }
+</style>
+
+<header class="site-header">
+    <div class="logo">
+        <a href="index.html">Arda İlci <span>/ REMAX</span></a>
+    </div>
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="hizmetlerimiz.html">Hizmetlerimiz</a></li>
+            <li><a href="portfoylerim.html">Portföylerim</a></li>
+            <li><a href="satilan-portfoylerim.html">Satılan Portföylerim</a></li>
+            <li><a href="iletisim.html">İletişim</a></li>
+        </ul>
+    </nav>
+</header>
