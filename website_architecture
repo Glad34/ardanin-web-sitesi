@@ -1,0 +1,265 @@
+{
+  "name": "Arda İlci - Remax Gayrimenkul Danışmanı",
+  "blueprint_summary": {
+    "goal": "Trust",
+    "style": "Luxury",
+    "tone": "Friendly"
+  },
+  "design_system": {
+    "palette": {
+      "primary_dark_gray": "#28282B",
+      "accent_gold": "#D4AF37",
+      "text_light": "#F5F5F5",
+      "background_dark": "#121212"
+    },
+    "typography": {
+      "family": "Atkinson Hyperlegible Mono, monospace",
+      "notes": "Lokal olarak veya bir font servisinden yüklenmesi gerekmektedir."
+    }
+  },
+  "seo_strategy": {
+    "target_audience": {
+      "age_range": "35-75",
+      "interests": [
+        "Ev Alım Satım",
+        "Gayrimenkul Yatırımı",
+        "Lüks Konut"
+      ]
+    },
+    "primary_keywords": [
+      "izmir satılık daire",
+      "izmir satılık villa",
+      "izmir yatırımlık villa",
+      "Arda İlci Remax",
+      "İzmir gayrimenkul danışmanı"
+    ],
+    "global_meta": {
+      "title_template": "{page_title} | Arda İlci - İzmir Gayrimenkul Danışmanı",
+      "meta_description": "İzmir'de satılık daire, villa ve yatırımlık gayrimenkuller için profesyonel ve güvenilir danışmanlık. Arda İlci ile hayalinizdeki eve veya yatırıma kavuşun."
+    }
+  },
+  "file_structure": [
+    {
+      "file_name": "index.html",
+      "page_title": "Ana Sayfa",
+      "components": [
+        {
+          "component_name": "navigation",
+          "logo": {
+            "type": "text",
+            "content": "Arda İlci"
+          },
+          "menu_items": [
+            {
+              "text": "Ana Sayfa",
+              "link": "index.html"
+            },
+            {
+              "text": "Hizmetlerimiz",
+              "link": "hizmetlerimiz.html"
+            },
+            {
+              "text": "Portföylerim",
+              "link": "portfoylerim.html"
+            },
+            {
+              "text": "Satılan Portföylerim",
+              "link": "satilan-portfoylerim.html"
+            },
+            {
+              "text": "İletişim",
+              "link": "iletisim.html"
+            }
+          ]
+        },
+        {
+          "component_name": "hero_section",
+          "background": {
+            "desktop": {
+              "type": "gif",
+              "source": "assets/hero-desktop.gif"
+            },
+            "mobile": {
+              "type": "gif",
+              "source": "assets/hero-mobile.gif"
+            }
+          },
+          "overlay_content": {
+            "headline": {
+              "text": "Arda İlci İzmir'deki Gayrimenkul Danışmanınız",
+              "animation": "typewriter",
+              "color": "#FFFFFF"
+            },
+            "cta_button": {
+              "text": "Temasa Geç",
+              "link": "iletisim.html"
+            }
+          }
+        },
+        {
+          "component_name": "trust_intro",
+          "title": "İzmir'de Güvenilir Gayrimenkul Ortağınız",
+          "text": "Yatırımınızın ve hayallerinizin değerini biliyorum. Lüks, şeffaflık ve samimiyet ilkeleriyle, İzmir emlak piyasasındaki en doğru adımları birlikte atalım.",
+          "image": "assets/arda-ilci-profile.jpg"
+        },
+        {
+          "component_name": "featured_listings",
+          "title": "Öne Çıkan Portföyler",
+          "source": "portfoylerim.html",
+          "max_items": 3
+        },
+        {
+          "component_name": "testimonials",
+          "title": "Müşteri Deneyimleri"
+        },
+        {
+          "component_name": "footer",
+          "contact_info": {
+            "name": "Arda İlci",
+            "office": "Remax",
+            "phone": "+90 5XX XXX XX XX",
+            "email": "arda.ilci@remax.com.tr"
+          },
+          "quick_links": [
+            {
+              "text": "Portföylerim",
+              "link": "portfoylerim.html"
+            },
+            {
+              "text": "Hizmetlerimiz",
+              "link": "hizmetlerimiz.html"
+            }
+          ],
+          "copyright": "© 2024 Arda İlci. Tüm hakları saklıdır."
+        }
+      ]
+    },
+    {
+      "file_name": "hizmetlerimiz.html",
+      "page_title": "Hizmetlerimiz",
+      "components": [
+        {
+          "component_name": "page_header",
+          "title": "Sunduğum Hizmetler"
+        },
+        {
+          "component_name": "service_list",
+          "services": [
+            {
+              "name": "Alım-Satım Danışmanlığı",
+              "description": "Mülkünüzün doğru fiyatla, en kısa sürede satılması veya hayalinizdeki mülkün bulunması için profesyonel destek."
+            },
+            {
+              "name": "Yatırım Danışmanlığı",
+              "description": "İzmir'in gelişen bölgelerinde yüksek getiri potansiyeline sahip gayrimenkul fırsatları ve pazar analizi."
+            },
+            {
+              "name": "Lüks Konut Uzmanlığı",
+              "description": "Villa, yalı ve premium konut segmentinde özel portföy ve gizlilik esasına dayalı butik hizmet."
+            },
+            {
+              "name": "Pazarlama ve Tanıtım",
+              "description": "Profesyonel fotoğraf/video çekimleri ve dijital pazarlama stratejileri ile mülkünüzün öne çıkarılması."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "file_name": "portfoylerim.html",
+      "page_title": "Portföylerim",
+      "components": [
+        {
+          "component_name": "page_header",
+          "title": "Aktif Portföylerim"
+        },
+        {
+          "component_name": "property_grid",
+          "filter_options": [
+            "Villa",
+            "Daire",
+            "Arsa",
+            "Ticari"
+          ],
+          "data_source": "api/active_listings.json"
+        }
+      ]
+    },
+    {
+      "file_name": "satilan-portfoylerim.html",
+      "page_title": "Satılan Portföylerim",
+      "components": [
+        {
+          "component_name": "page_header",
+          "title": "Başarıyla Sonuçlanan Satışlar"
+        },
+        {
+          "component_name": "property_grid",
+          "note": "Bu sayfa, referans ve güven oluşturma amaçlıdır.",
+          "data_source": "api/sold_listings.json"
+        }
+      ]
+    },
+    {
+      "file_name": "iletisim.html",
+      "page_title": "İletişim",
+      "components": [
+        {
+          "component_name": "page_header",
+          "title": "İletişime Geçin"
+        },
+        {
+          "component_name": "contact_form_section",
+          "form_fields": [
+            {
+              "name": "fullname",
+              "type": "text",
+              "label": "Adınız Soyadınız"
+            },
+            {
+              "name": "email",
+              "type": "email",
+              "label": "E-posta Adresiniz"
+            },
+            {
+              "name": "phone",
+              "type": "tel",
+              "label": "Telefon Numaranız"
+            },
+            {
+              "name": "message",
+              "type": "textarea",
+              "label": "Mesajınız"
+            }
+          ],
+          "contact_details": [
+            {
+              "type": "phone",
+              "value": "+90 5XX XXX XX XX"
+            },
+            {
+              "type": "email",
+              "value": "arda.ilci@remax.com.tr"
+            },
+            {
+              "type": "address",
+              "value": "Remax Ofis Adresi, İzmir"
+            }
+          ]
+        },
+        {
+          "component_name": "map",
+          "location_coordinates": "38.4237, 27.1428"
+        }
+      ]
+    },
+    {
+      "file_name": "assets/style.css",
+      "type": "stylesheet"
+    },
+    {
+      "file_name": "assets/script.js",
+      "type": "javascript"
+    }
+  ]
+}
