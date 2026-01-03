@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap');
+
+:root {
+    --dark-gray: #2c2c2c;
+    --gold: #D4AF37;
+    --white: #ffffff;
+    /* Blueprint: 'Atkinson Hyperlegible Mono'. Bu font Google Fonts'ta bulunmadığı için en yakın alternatif olan 'Atkinson Hyperlegible' kullanılmıştır. */
+    --font-main: 'Atkinson Hyperlegible', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--dark-gray);
+    color: var(--white);
+    line-height: 1.6;
+}
+
+a {
+    color: var(--gold);
+    text-decoration: none;
+}
+
+header {
+    background-color: rgba(44, 44, 44, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+header .logo a {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 1px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+header nav ul li a {
+    color: var(--white);
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+    color: var(--gold);
+}
+
+.hero {
+    height: 100vh;
+    background-image: url('assets/hero.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    padding: 0 5%;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.4));
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+}
+
+.hero h1 {
+    font-size: 3.2rem;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    min-height: 4.5rem; /* Yazı yazılırken kaymayı önler */
+}
+
+#typewriter::after {
+    content: '|';
+    animation: blink 1s step-end infinite;
+    color: var(--gold);
+    font-weight: 400;
+    font-size: 3rem;
+    margin-left: 5px;
+}
+
+@keyframes blink {
+    from, to { opacity: 1 }
+    50% { opacity: 0 }
+}
+
+.cta-button {
+    background-color: var(--gold);
+    color: var(--dark-gray);
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    border: 2px solid var(--gold);
+}
+
+.cta-button:hover {
+    background-color: transparent;
+    color: var(--gold);
+    transform: translateY(-3px);
+}
+
+.placeholder-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: calc(100vh - 80px); /* Footer hariç tüm yükseklik */
+    padding: 120px 5% 2rem 5%;
+}
+
+.placeholder-page h1 {
+    font-size: 2.5rem;
+    color: var(--gold);
+    margin-bottom: 1rem;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 5%;
+    background-color: #222;
+    margin-top: auto;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 0.8rem 5%;
+    }
+
+    header nav ul {
+        margin-top: 0.8rem;
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    header .logo a {
+        font-size: 1.5rem;
+    }
+
+    .hero h1, #typewriter::after {
+        font-size: 2.2rem;
+        min-height: 6rem;
+    }
+
+    .cta-button {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+    }
+    
+    .placeholder-page {
+        padding-top: 150px; /* Mobil için daha yüksek header'ı hesaba kat */
+    }
+}
