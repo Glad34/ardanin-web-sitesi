@@ -1,3 +1,28 @@
 {
-    "pages": {}
+    "pages": {
+        "index.html": [
+            "components/header.html",
+            "components/hero.html",
+            "components/stats.html",
+            "components/featured-listings.html",
+            "components/whatsapp-cta.html",
+            "components/footer.html"
+        ],
+        "portfoy.html": [
+            "components/header.html",
+            "components/portfolio-list.html",
+            "components/footer.html"
+        ],
+        "hakkimda.html": [
+            "components/header.html",
+            "components/about.html",
+            "components/footer.html"
+        ],
+        "iletisim.html": [
+            "components/header.html",
+            "components/contact-info.html",
+            "components/contact-form.html",
+            "components/footer.html"
+        ]
+    }
 }

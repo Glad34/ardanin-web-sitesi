@@ -1,161 +1,112 @@
-<!-- HEADER COMPONENT -->
-<header class="main-header sticky-header">
-    <div class="container header-container">
-        <a href="index.html" class="logo">
-            <span class="logo-main">ARDA İLCİ</span>
-            <span class="logo-sub">GAYRİMENKUL</span>
-        </a>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="index.html">Ana Sayfa</a></li>
-                <li><a href="portfoy.html">Portföyler</a></li>
-                <li><a href="hakkimda.html">Hakkımda</a></li>
-                <li><a href="iletisim.html">İletişim</a></li>
-            </ul>
-        </nav>
-        <button class="hamburger-menu" aria-label="Menüyü aç/kapat">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </div>
-</header>
-
 <style>
-    .main-header {
-        background-color: var(--anthracite);
-        padding: 15px 0;
-        position: fixed;
-        width: 100%;
+    .sticky-header {
+        position: sticky;
         top: 0;
-        left: 0;
         z-index: 1000;
+        background-color: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
         box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        height: var(--header-height);
-    }
-    .header-container {
+        padding: 15px 5%;
         display: flex;
         justify-content: space-between;
         align-items: center;
     }
-    .logo {
+    .logo a {
         text-decoration: none;
-        color: var(--off-white);
+        color: var(--main-color);
     }
-    .logo-main {
+    .logo .brand-bold {
+        font-weight: 800;
         font-size: 1.5rem;
-        font-weight: 700;
         letter-spacing: 1px;
     }
-    .logo-sub {
-        display: block;
-        font-size: 0.8rem;
+    .logo .brand-thin {
         font-weight: 300;
-        color: var(--gold);
-        letter-spacing: 2px;
+        font-size: 1.4rem;
+        opacity: 0.8;
     }
     .main-nav ul {
+        margin: 0;
+        padding: 0;
         list-style: none;
         display: flex;
         gap: 30px;
     }
     .main-nav a {
-        color: var(--off-white);
         text-decoration: none;
+        color: var(--main-color);
         font-weight: 500;
-        position: relative;
         transition: color 0.3s ease;
     }
-    .main-nav a::after {
-        content: '';
-        position: absolute;
-        width: 0;
-        height: 2px;
-        bottom: -5px;
-        left: 50%;
-        transform: translateX(-50%);
-        background-color: var(--gold);
-        transition: width 0.3s ease;
+    .main-nav a:hover {
+        color: var(--accent-color);
     }
-    .main-nav a:hover, .main-nav a.active {
-        color: var(--gold);
-    }
-    .main-nav a:hover::after, .main-nav a.active::after {
-        width: 100%;
-    }
-    .hamburger-menu {
+    .hamburger {
         display: none;
-        background: none;
-        border: none;
         cursor: pointer;
         flex-direction: column;
         gap: 5px;
     }
-    .hamburger-menu span {
-        display: block;
+    .hamburger .bar {
         width: 25px;
         height: 3px;
-        background-color: var(--off-white);
-        transition: all 0.3s ease-in-out;
+        background-color: var(--main-color);
+        transition: all 0.3s ease;
     }
-
-    /* Mobile styles */
     @media (max-width: 768px) {
         .main-nav {
+            display: none;
             position: absolute;
-            top: var(--header-height);
+            top: 100%;
             left: 0;
             width: 100%;
-            background-color: var(--anthracite);
-            flex-direction: column;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease-in-out;
+            background-color: white;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
         }
-        .main-nav.mobile-active {
-            max-height: 500px; /* Adjust as needed */
+        .main-nav.active {
+            display: block;
         }
         .main-nav ul {
             flex-direction: column;
             padding: 20px;
-            text-align: center;
+            gap: 20px;
+            align-items: center;
         }
-        .main-nav ul li {
-            margin-bottom: 15px;
-        }
-        .hamburger-menu {
+        .hamburger {
             display: flex;
-        }
-        .hamburger-menu.is-active span:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
-        }
-        .hamburger-menu.is-active span:nth-child(2) {
-            opacity: 0;
-        }
-        .hamburger-menu.is-active span:nth-child(3) {
-            transform: rotate(-45deg) translate(7px, -6px);
         }
     }
 </style>
 
-<script>
-    // HAMBURGER MENU SCRIPT
-    const hamburger = document.querySelector('.hamburger-menu');
-    const navMenu = document.querySelector('.main-nav');
+<header class="sticky-header">
+    <div class="logo">
+        <a href="index.html">
+            <span class="brand-bold">ARDA İLCİ</span>
+            <span class="brand-thin">GAYRİMENKUL</span>
+        </a>
+    </div>
+    <nav class="main-nav">
+        <ul>
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="portfoy.html">Portföyler</a></li>
+            <li><a href="hakkimda.html">Hakkımda</a></li>
+            <li><a href="iletisim.html">İletişim</a></li>
+        </ul>
+    </nav>
+    <div class="hamburger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+</header>
 
-    if (hamburger && navMenu) {
+<script>
+    const hamburger = document.querySelector('.hamburger');
+    const nav = document.querySelector('.main-nav');
+    if (hamburger && nav) {
         hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('is-active');
-            navMenu.classList.toggle('mobile-active');
+            nav.classList.toggle('active');
         });
     }
-    
-    // SET ACTIVE LINK
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    const navLinks = document.querySelectorAll('.main-nav a');
-    navLinks.forEach(link => {
-        if (link.getAttribute('href') === currentPage) {
-            link.classList.add('active');
-        }
-    });
 </script>

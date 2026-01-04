@@ -1,49 +1,83 @@
-<!-- STATS COMPONENT -->
-<section class="stats-section section">
-    <div class="container">
-        <div class="stats-grid">
-            <div class="stat-item">
-                <div class="stat-number">150+</div>
-                <div class="stat-label">Satılan Mülk</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">98%</div>
-                <div class="stat-label">Müşteri Memnuniyeti</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">10+</div>
-                <div class="stat-label">Yıllık Tecrübe</div>
-            </div>
-        </div>
-    </div>
-</section>
-
 <style>
     .stats-section {
+        padding: 80px 5%;
         background-color: #fff;
-    }
-    .stats-grid {
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
+        gap: 50px;
         text-align: center;
-        flex-wrap: wrap;
-        gap: 20px;
     }
     .stat-item {
-        flex: 1;
-        min-width: 200px;
+        flex-basis: 250px;
     }
     .stat-number {
-        font-size: 3rem;
-        font-weight: bold;
-        color: var(--gold);
+        font-size: 3.5rem;
+        font-weight: 700;
+        color: var(--accent-color);
     }
     .stat-label {
-        font-size: 1.1rem;
-        color: var(--anthracite);
+        font-size: 1.2rem;
+        color: var(--main-color);
+        opacity: 0.8;
+    }
+    @media (max-width: 768px) {
+        .stats-section {
+            flex-direction: column;
+            padding: 50px 5%;
+        }
     }
 </style>
 
+<section class="stats-section fade-in">
+    <div class="stat-item">
+        <div class="stat-number" data-target="120">0</div>
+        <div class="stat-label">Tamamlanan Satış</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-number" data-target="98">0</div>
+        <div class="stat-label">Mutlu Müşteri (%)</div>
+    </div>
+     <div class="stat-item">
+        <div class="stat-number" data-target="250">0</div>
+        <div class="stat-label">Milyon TL+ Portföy</div>
+    </div>
+</section>
+
 <script>
-    // No script needed for this component.
+function animateCounters() {
+    const counters = document.querySelectorAll('.stat-number');
+    const speed = 200; 
+
+    counters.forEach(counter => {
+        const updateCount = () => {
+            const target = +counter.getAttribute('data-target');
+            const count = +counter.innerText;
+
+            const inc = target / speed;
+
+            if (count < target) {
+                counter.innerText = Math.ceil(count + inc);
+                setTimeout(updateCount, 1);
+            } else {
+                counter.innerText = target;
+            }
+        };
+
+        updateCount();
+    });
+}
+
+// Run animation when the component is visible
+const statsSection = document.querySelector('.stats-section');
+if (statsSection) {
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounters();
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+    observer.observe(statsSection);
+}
 </script>

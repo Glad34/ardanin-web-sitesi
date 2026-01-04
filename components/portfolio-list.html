@@ -1,83 +1,101 @@
-<!-- PORTFOLIO LIST COMPONENT -->
-<section class="portfolio-list-section section">
-    <div class="container">
-        <h2 class="section-title">Tüm Portföyler</h2>
-        <div class="filter-buttons">
-            <button class="filter-btn active" data-filter="all">Tümü</button>
-            <button class="filter-btn" data-filter="urla">Urla</button>
-            <button class="filter-btn" data-filter="cesme">Çeşme</button>
-            <button class="filter-btn" data-filter="guzelbahce">Güzelbahçe</button>
-        </div>
-        <!-- Dinamik Veri Notu: Bu bölümdeki kartlar normalde Google Sheets'ten API ile çekilmelidir. -->
-        <div class="portfolio-grid full-portfolio">
-            <div class="portfolio-card" data-category="urla">
-                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop" alt="Urla Villa 1">
-                <div class="card-content"><h3>Urla'da Saklı Cennet</h3><p>Geniş bahçeli, havuzlu.</p><span class="price">35.000.000 ₺</span></div>
-            </div>
-            <div class="portfolio-card" data-category="cesme">
-                <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=2070&auto=format&fit=crop" alt="Çeşme Villa 1">
-                <div class="card-content"><h3>Çeşme Alaçatı'da Taş Ev</h3><p>Merkezi konumda, otantik.</p><span class="price">28.500.000 ₺</span></div>
-            </div>
-            <div class="portfolio-card" data-category="guzelbahce">
-                <img src="https://images.unsplash.com/photo-1598228723793-52759bba239c?q=80&w=1974&auto=format&fit=crop" alt="Güzelbahçe Villa">
-                <div class="card-content"><h3>Güzelbahçe Sahil Evi</h3><p>Denize sıfır konumda.</p><span class="price">42.000.000 ₺</span></div>
-            </div>
-            <div class="portfolio-card" data-category="urla">
-                <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2071&auto=format&fit=crop" alt="Urla Villa 2">
-                <div class="card-content"><h3>Modern Mimarili Urla Villası</h3><p>Akıllı ev sistemleri.</p><span class="price">45.750.000 ₺</span></div>
-            </div>
-        </div>
-    </div>
-</section>
-
 <style>
-    .portfolio-list-section {
-        padding-top: calc(var(--header-height) + 60px);
+    .portfolio-page {
+        padding: 60px 5%;
     }
-    .filter-buttons {
+    .portfolio-page h1 {
         text-align: center;
+        font-size: 2.8rem;
         margin-bottom: 40px;
     }
+    .filters {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 40px;
+        flex-wrap: wrap;
+    }
     .filter-btn {
-        background: none;
-        border: 1px solid #ccc;
         padding: 10px 20px;
-        margin: 0 5px;
+        border: 1px solid var(--accent-color);
+        background-color: transparent;
+        color: var(--accent-color);
         border-radius: 12px;
         cursor: pointer;
-        transition: all 0.3s ease;
+        transition: background-color 0.3s, color 0.3s;
+        font-weight: 500;
     }
-    .filter-btn:hover, .filter-btn.active {
-        background-color: var(--anthracite);
-        color: var(--off-white);
-        border-color: var(--anthracite);
+    .filter-btn.active, .filter-btn:hover {
+        background-color: var(--accent-color);
+        color: var(--main-color);
     }
-    .full-portfolio {
+    #portfolio-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
         gap: 30px;
+    }
+    /* Card styles can be reused from featured-listings if desired, or defined separately */
+    .portfolio-card {
+        background: #fff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+    .portfolio-card img {
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    .portfolio-info {
+        padding: 20px;
+    }
+     .portfolio-info h3 {
+        margin: 0 0 10px 0;
+        font-size: 1.5rem;
+    }
+    .portfolio-location {
+        opacity: 0.7;
+        margin-bottom: 15px;
+    }
+    .portfolio-price {
+        font-size: 1.6rem;
+        font-weight: bold;
+        color: var(--accent-color);
     }
 </style>
 
+<section class="portfolio-page fade-in">
+    <h1>Güncel Portföylerimiz</h1>
+    <div class="filters">
+        <button class="filter-btn active" data-filter="all">Tümü</button>
+        <button class="filter-btn" data-filter="urla">Urla</button>
+        <button class="filter-btn" data-filter="cesme">Çeşme</button>
+        <button class="filter-btn" data-filter="guzelbahce">Güzelbahçe</button>
+    </div>
+    <div id="portfolio-grid">
+        <!-- Örnek Kart -->
+        <div class="portfolio-card" data-category="cesme">
+            <img src="https://via.placeholder.com/400x250/1A1A1A/D4AF37?text=Çeşme+Rezidans" alt="Çeşme'de satılık rezidans">
+            <div class="portfolio-info">
+                <h3>Ilıca Plajı Yakını Lüks Rezidans</h3>
+                <p class="portfolio-location">Çeşme, İzmir</p>
+                <p class="portfolio-price">₺33.000.000</p>
+            </div>
+        </div>
+        <!-- Buraya Google Sheets'ten gelen veriler dinamik olarak eklenecek -->
+    </div>
+</section>
+
 <script>
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const portfolioCards = document.querySelectorAll('.full-portfolio .portfolio-card');
+    // Bu alana Google Sheets API'den veri çeken ve portföy listesini oluşturan kod eklenecektir.
+    // Ayrıca filtreleme mantığı da burada işlenecektir.
+    console.log('Portfolio list component loaded. Google Sheets integration needed here.');
 
-    filterButtons.forEach(button => {
+    document.querySelectorAll('.filter-btn').forEach(button => {
         button.addEventListener('click', () => {
-            // Update active button state
-            filterButtons.forEach(btn => btn.classList.remove('active'));
+            document.querySelector('.filter-btn.active').classList.remove('active');
             button.classList.add('active');
-
-            const filter = button.dataset.filter;
-
-            portfolioCards.forEach(card => {
-                if (filter === 'all' || card.dataset.category === filter) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
+            // Filtreleme fonksiyonunu burada çağır
         });
     });
 </script>

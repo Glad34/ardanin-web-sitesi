@@ -1,14 +1,15 @@
 
 async function loadComponents() {
+    console.log("Mimar Loader: Bileşenler aranıyor...");
     const elements = document.querySelectorAll('[data-component]');
     for (const el of elements) {
         const file = el.getAttribute('data-component');
+        console.log("Yükleniyor: " + file);
         try {
             const response = await fetch(file);
             if (response.ok) {
                 const html = await response.text();
                 el.innerHTML = html;
-                // Scriptleri yeniden oluşturup enjekte et (Hamburger menü vb. çalışması için)
                 const scripts = el.querySelectorAll('script');
                 scripts.forEach(oldScript => {
                     const newScript = document.createElement('script');
@@ -17,8 +18,8 @@ async function loadComponents() {
                     document.body.appendChild(newScript);
                     oldScript.remove();
                 });
-            }
-        } catch (e) { console.error('Bileşen Hatası:', file, e); }
+            } else { console.error("Hata: Dosya bulunamadı -> " + file); }
+        } catch (e) { console.error("Yükleme hatası: " + file, e); }
     }
 }
 window.addEventListener('DOMContentLoaded', loadComponents);

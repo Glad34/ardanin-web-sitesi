@@ -1,27 +1,43 @@
-<!-- ARDA İLCİ GAYRİMENKUL - ANA SAYFA -->
 <!DOCTYPE html>
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arda İlci | REMAX Gayrimenkul & Yatırım - İzmir Lüks Konut</title>
-    <meta name="description" content="Arda İlci liderliğinde İzmir, Urla, Çeşme ve Güzelbahçe'nin en prestijli lüks villa, malikane ve konut portföyleri. Güvenilir gayrimenkul yatırımı.">
-    <meta name="keywords" content="İzmir satılık lüks villa, Urla malikane fiyatları, Çeşme gayrimenkul yatırım, Arda İlci, Remax İzmir, lüks konut uzmanı">
-    <link rel="stylesheet" href="css/global.css">
+    <meta name="description" content="Arda İlci ile İzmir, Urla ve Çeşme'nin en prestijli lüks villa ve malikane portföylerini keşfedin. Güvenilir gayrimenkul yatırım danışmanlığı.">
+    <meta name="keywords" content="İzmir satılık lüks villa, Urla malikane fiyatları, Çeşme gayrimenkul yatırım, Arda İlci, Remax lüks konut">
+    <style>
+        :root {
+            --main-color: #1A1A1A;
+            --accent-color: #D4AF37;
+            --bg-color: #F9F9F9;
+        }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--main-color);
+            overflow-x: hidden;
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body>
-
     <div data-component="components/header.html"></div>
-
-    <main>
-        <div data-component="components/hero.html"></div>
-        <div data-component="components/stats.html"></div>
-        <div data-component="components/featured-portfolio.html"></div>
-        <div data-component="components/whatsapp-cta.html"></div>
-    </main>
-
+    <div data-component="components/hero.html"></div>
+    <div data-component="components/stats.html"></div>
+    <div data-component="components/featured-listings.html"></div>
+    <div data-component="components/whatsapp-cta.html"></div>
     <div data-component="components/footer.html"></div>
 
-    <script src="js/main.js"></script>
+    <script src="loader.js"></script>
 </body>
 </html>

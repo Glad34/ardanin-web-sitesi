@@ -1,95 +1,61 @@
-<!-- CONTACT FORM COMPONENT -->
-<section class="contact-section section">
-    <div class="container">
-        <h2 class="section-title">İletişim</h2>
-        <div class="contact-grid">
-            <div class="contact-info">
-                <h3>Bize Ulaşın</h3>
-                <p>Portföylerimizle ilgili bilgi almak veya bir randevu ayarlamak için aşağıdaki kanallardan bize ulaşabilirsiniz.</p>
-                <ul>
-                    <li><strong>Adres:</strong> Remax Ofisi, İzmir, Türkiye</li>
-                    <li><strong>Telefon:</strong> <a href="tel:+905555555555">+90 555 555 55 55</a></li>
-                    <li><strong>E-posta:</strong> <a href="mailto:arda.ilci@remax.com.tr">arda.ilci@remax.com.tr</a></li>
-                </ul>
-                <div class="map-container">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d200063.9392237004!2d26.91183181829833!3d38.41780650392359!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14bbd862a762cacd%3A0x628cbba1a591405!2zxLB6bWly!5e0!3m2!1str!2str!4v1672844501432!5m2!1str!2str" width="100%" height="300" style="border:0; border-radius:12px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-            </div>
-            <div class="contact-form-wrapper">
-                <h3>Teklif Formu</h3>
-                <form class="contact-form">
-                    <div class="form-group">
-                        <label for="name">Adınız Soyadınız</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">E-posta Adresiniz</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Mesajınız</label>
-                        <textarea id="message" name="message" rows="6" required></textarea>
-                    </div>
-                    <button type="submit" class="btn">Gönder</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</section>
-
 <style>
-    .contact-section {
-        padding-top: calc(var(--header-height) + 60px);
+    .contact-form-section {
+        padding: 80px 5%;
+        background-color: #fff;
     }
-    .contact-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 50px;
+    .contact-form-section h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 40px;
     }
-    .contact-info h3, .contact-form-wrapper h3 {
-        font-size: 1.8rem;
-        color: var(--anthracite);
-        margin-bottom: 20px;
+    .form-container {
+        max-width: 700px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
     }
-    .contact-info ul {
-        list-style: none;
-        margin: 20px 0;
-    }
-    .contact-info ul li {
-        margin-bottom: 10px;
-    }
-    .form-group {
-        margin-bottom: 20px;
-    }
-    .form-group label {
-        display: block;
-        margin-bottom: 5px;
-        font-weight: bold;
-    }
-    .form-group input, .form-group textarea {
+    .form-container input, .form-container textarea {
         width: 100%;
-        padding: 12px;
+        padding: 15px;
         border: 1px solid #ddd;
         border-radius: 12px;
         font-size: 1rem;
+        font-family: inherit;
     }
-    .contact-form button {
-        width: 100%;
+    .form-container input:focus, .form-container textarea:focus {
+        outline: none;
+        border-color: var(--accent-color);
+        box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
     }
-    @media (max-width: 992px) {
-        .contact-grid {
-            grid-template-columns: 1fr;
-        }
+    .form-container button {
+        padding: 15px 30px;
+        border: none;
+        background-color: var(--main-color);
+        color: #fff;
+        font-size: 1.1rem;
+        font-weight: bold;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    .form-container button:hover {
+        background-color: var(--accent-color);
+        color: var(--main-color);
     }
 </style>
 
+<section class="contact-form-section fade-in">
+    <h2>Teklif ve Bilgi Formu</h2>
+    <form class="form-container" action="#" method="post">
+        <input type="text" name="name" placeholder="Adınız Soyadınız" required>
+        <input type="email" name="email" placeholder="E-posta Adresiniz" required>
+        <input type="tel" name="phone" placeholder="Telefon Numaranız">
+        <textarea name="message" rows="6" placeholder="Mesajınız veya ilgilendiğiniz mülk..." required></textarea>
+        <button type="submit">Mesajı Gönder</button>
+    </form>
+</section>
+
 <script>
-    const form = document.querySelector('.contact-form');
-    if(form) {
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            alert('Mesajınız alınmıştır. En kısa sürede geri dönüş yapılacaktır.');
-            form.reset();
-        });
-    }
+// Contact form component script area. (e.g., form validation)
 </script>
