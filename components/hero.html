@@ -1,15 +1,28 @@
+<!-- HERO COMPONENT -->
+<section class="hero-section section">
+    <div class="hero-video-bg">
+        <!-- Sinematik villa tanıtım videosu alanı. Şimdilik resim kullanılıyor. -->
+        <!-- <video autoplay muted loop><source src="videos/villa.mp4" type="video/mp4"></video> -->
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+        <h1>İzmir'in En Prestijli Portföyleriyle Tanışın</h1>
+        <p>Hayalinizdeki yaşam alanını bulmak için doğru yerdesiniz.</p>
+        <a href="portfoy.html" class="btn">Portföyü İncele</a>
+    </div>
+</section>
+
 <style>
     .hero-section {
         position: relative;
-        height: 80vh;
+        height: 90vh;
         display: flex;
         align-items: center;
         justify-content: center;
         text-align: center;
-        color: white;
-        padding-top: 0; 
-        padding-bottom: 0;
-        min-height: 500px;
+        color: var(--off-white);
+        padding: 0; /* Override global section padding */
+        margin-top: var(--header-height);
     }
     .hero-video-bg {
         position: absolute;
@@ -18,7 +31,7 @@
         width: 100%;
         height: 100%;
         overflow: hidden;
-        z-index: -2;
+        background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop') center center/cover no-repeat;
     }
     .hero-video-bg video {
         width: 100%;
@@ -31,14 +44,15 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(26, 26, 26, 0.6); /* Antrasit overlay */
-        z-index: -1;
+        background-color: rgba(0,0,0,0.5);
+    }
+    .hero-content {
+        position: relative;
+        z-index: 2;
     }
     .hero-content h1 {
-        font-size: 4rem;
-        color: white;
+        font-size: 3.5rem;
         margin-bottom: 20px;
-        text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
     }
     .hero-content p {
         font-size: 1.2rem;
@@ -50,18 +64,7 @@
         }
     }
 </style>
-<section class="hero-section">
-    <div class="hero-video-bg">
-        <!-- Placeholder video - sinematik villa turu -->
-        <video autoplay muted loop playsinline>
-            <source src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4" type="video/mp4"> 
-            Your browser does not support the video tag.
-        </video>
-    </div>
-    <div class="hero-overlay"></div>
-    <div class="container hero-content">
-        <h1>İzmir'in En Prestijli Portföyleriyle Tanışın</h1>
-        <p>Urla, Çeşme ve Güzelbahçe'nin en seçkin mülkleri sizleri bekliyor.</p>
-        <a href="#featured" class="button-primary">Portföyü İncele</a>
-    </div>
-</section>
+
+<script>
+    // No script needed for this component.
+</script>

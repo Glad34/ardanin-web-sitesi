@@ -1,46 +1,49 @@
+<!-- STATS COMPONENT -->
+<section class="stats-section section">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">150+</div>
+                <div class="stat-label">Satılan Mülk</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">98%</div>
+                <div class="stat-label">Müşteri Memnuniyeti</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">10+</div>
+                <div class="stat-label">Yıllık Tecrübe</div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <style>
     .stats-section {
         background-color: #fff;
     }
-    .stats-container {
+    .stats-grid {
         display: flex;
         justify-content: space-around;
         text-align: center;
-        gap: 30px;
+        flex-wrap: wrap;
+        gap: 20px;
     }
     .stat-item {
-        padding: 20px;
+        flex: 1;
+        min-width: 200px;
     }
-    .stat-item .number {
-        font-family: 'Playfair Display', serif;
-        font-size: 3.5rem;
-        color: var(--accent-color);
-        font-weight: 700;
+    .stat-number {
+        font-size: 3rem;
+        font-weight: bold;
+        color: var(--gold);
     }
-    .stat-item .label {
+    .stat-label {
         font-size: 1.1rem;
-        color: var(--text-color);
-        margin-top: 5px;
-    }
-    @media (max-width: 768px) {
-        .stats-container {
-            flex-direction: column;
-        }
+        color: var(--anthracite);
     }
 </style>
-<section class="stats-section">
-    <div class="container stats-container">
-        <div class="stat-item">
-            <div class="number">120+</div>
-            <div class="label">Satılan Mülk</div>
-        </div>
-        <div class="stat-item">
-            <div class="number">98%</div>
-            <div class="label">Mutlu Müşteri</div>
-        </div>
-        <div class="stat-item">
-            <div class="number">15 Yıl</div>
-            <div class="label">Sektör Tecrübesi</div>
-        </div>
-    </div>
-</section>
+
+<script>
+    // No script needed for this component.
+</script>

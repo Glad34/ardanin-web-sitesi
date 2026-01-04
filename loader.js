@@ -1,6 +1,5 @@
 
 async function loadComponents() {
-    console.log("Bileşenler yükleniyor...");
     const elements = document.querySelectorAll('[data-component]');
     for (const el of elements) {
         const file = el.getAttribute('data-component');
@@ -9,15 +8,17 @@ async function loadComponents() {
             if (response.ok) {
                 const html = await response.text();
                 el.innerHTML = html;
+                // Scriptleri yeniden oluşturup enjekte et (Hamburger menü vb. çalışması için)
                 const scripts = el.querySelectorAll('script');
-                scripts.forEach(s => {
-                    const ns = document.createElement('script');
-                    Array.from(s.attributes).forEach(a => ns.setAttribute(a.name, a.value));
-                    ns.appendChild(document.createTextNode(s.innerHTML));
-                    document.body.appendChild(ns); s.remove();
+                scripts.forEach(oldScript => {
+                    const newScript = document.createElement('script');
+                    Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+                    newScript.appendChild(document.createTextNode(oldScript.innerHTML));
+                    document.body.appendChild(newScript);
+                    oldScript.remove();
                 });
             }
-        } catch (e) { console.error('Hata:', file, e); }
+        } catch (e) { console.error('Bileşen Hatası:', file, e); }
     }
 }
 window.addEventListener('DOMContentLoaded', loadComponents);

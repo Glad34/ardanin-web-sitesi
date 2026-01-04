@@ -1,0 +1,68 @@
+<!-- ABOUT ME COMPONENT -->
+<section class="about-me-section section">
+    <div class="container">
+        <h2 class="section-title">Hakkımda</h2>
+        <div class="about-content">
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1887&auto=format&fit=crop" alt="Arda İlci Portre">
+            </div>
+            <div class="about-text">
+                <h3>Arda İlci - Lüks Konut ve Yatırım Uzmanı</h3>
+                <p>İzmir ve Ege'nin incisi Urla, Çeşme gibi bölgelerde lüks gayrimenkul sektöründe 10 yılı aşkın tecrübemle, müşterilerime sadece bir ev değil, bir yaşam tarzı sunuyorum. Yüksek gelir grubuna hitap eden portföyüm ve şeffaf çalışma prensibimle, yatırımcılar ve aileler için en doğru tercihleri yapmalarına rehberlik ediyorum.</p>
+                <h4>Başarılar ve Ödüller</h4>
+                <ul>
+                    <li>REMAX Türkiye Ciro Birincisi (2022)</li>
+                    <li>REMAX Diamond Club Üyesi</li>
+                    <li>En Yüksek Müşteri Memnuniyeti Ödülü (2021, 2023)</li>
+                </ul>
+                <h4>Vizyonum</h4>
+                <p>REMAX markasının global gücünü, yerel piyasa bilgimle birleştirerek, her müşterim için kişiye özel, güvenilir ve kârlı bir gayrimenkul deneyimi yaratmak. Benim için her satış, bir başarının değil, uzun soluklu bir güven ilişkisinin başlangıcıdır.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .about-me-section {
+         padding-top: calc(var(--header-height) + 60px);
+    }
+    .about-content {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 50px;
+        align-items: center;
+    }
+    .about-image img {
+        width: 100%;
+        max-width: 350px;
+        border-radius: 12px;
+        filter: drop-shadow(0 5px 15px rgba(0,0,0,0.2));
+    }
+    .about-text h3 {
+        color: var(--anthracite);
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+    .about-text h4 {
+        color: var(--gold);
+        font-size: 1.2rem;
+        margin-top: 30px;
+        margin-bottom: 10px;
+    }
+    .about-text ul {
+        list-style-position: inside;
+    }
+    @media (max-width: 768px) {
+        .about-content {
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+        .about-image {
+            margin-bottom: 30px;
+        }
+    }
+</style>
+
+<script>
+    // No script needed for this component.
+</script>

@@ -1,12 +1,3 @@
 {
-    "pages": {
-        "index.html": [
-            "header.html",
-            "hero.html",
-            "stats.html",
-            "featured-listings.html",
-            "whatsapp-cta.html",
-            "footer.html"
-        ]
-    }
+    "pages": {}
 }

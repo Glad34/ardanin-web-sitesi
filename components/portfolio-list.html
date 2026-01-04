@@ -1,0 +1,83 @@
+<!-- PORTFOLIO LIST COMPONENT -->
+<section class="portfolio-list-section section">
+    <div class="container">
+        <h2 class="section-title">Tüm Portföyler</h2>
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">Tümü</button>
+            <button class="filter-btn" data-filter="urla">Urla</button>
+            <button class="filter-btn" data-filter="cesme">Çeşme</button>
+            <button class="filter-btn" data-filter="guzelbahce">Güzelbahçe</button>
+        </div>
+        <!-- Dinamik Veri Notu: Bu bölümdeki kartlar normalde Google Sheets'ten API ile çekilmelidir. -->
+        <div class="portfolio-grid full-portfolio">
+            <div class="portfolio-card" data-category="urla">
+                <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop" alt="Urla Villa 1">
+                <div class="card-content"><h3>Urla'da Saklı Cennet</h3><p>Geniş bahçeli, havuzlu.</p><span class="price">35.000.000 ₺</span></div>
+            </div>
+            <div class="portfolio-card" data-category="cesme">
+                <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=2070&auto=format&fit=crop" alt="Çeşme Villa 1">
+                <div class="card-content"><h3>Çeşme Alaçatı'da Taş Ev</h3><p>Merkezi konumda, otantik.</p><span class="price">28.500.000 ₺</span></div>
+            </div>
+            <div class="portfolio-card" data-category="guzelbahce">
+                <img src="https://images.unsplash.com/photo-1598228723793-52759bba239c?q=80&w=1974&auto=format&fit=crop" alt="Güzelbahçe Villa">
+                <div class="card-content"><h3>Güzelbahçe Sahil Evi</h3><p>Denize sıfır konumda.</p><span class="price">42.000.000 ₺</span></div>
+            </div>
+            <div class="portfolio-card" data-category="urla">
+                <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2071&auto=format&fit=crop" alt="Urla Villa 2">
+                <div class="card-content"><h3>Modern Mimarili Urla Villası</h3><p>Akıllı ev sistemleri.</p><span class="price">45.750.000 ₺</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .portfolio-list-section {
+        padding-top: calc(var(--header-height) + 60px);
+    }
+    .filter-buttons {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .filter-btn {
+        background: none;
+        border: 1px solid #ccc;
+        padding: 10px 20px;
+        margin: 0 5px;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    .filter-btn:hover, .filter-btn.active {
+        background-color: var(--anthracite);
+        color: var(--off-white);
+        border-color: var(--anthracite);
+    }
+    .full-portfolio {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
+</style>
+
+<script>
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const portfolioCards = document.querySelectorAll('.full-portfolio .portfolio-card');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Update active button state
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            const filter = button.dataset.filter;
+
+            portfolioCards.forEach(card => {
+                if (filter === 'all' || card.dataset.category === filter) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+</script>
