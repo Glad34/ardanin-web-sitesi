@@ -13,10 +13,10 @@ async function loadComponents() {
                     const ns = document.createElement('script');
                     Array.from(s.attributes).forEach(a => ns.setAttribute(a.name, a.value));
                     ns.appendChild(document.createTextNode(s.innerHTML));
-                    s.parentNode.replaceChild(ns, s);
+                    el.appendChild(ns); s.remove();
                 });
             }
-        } catch (e) { console.error('Hata:', file); }
+        } catch (e) { console.error('Bileşen Hatası:', file); }
     }
 }
-window.addEventListener('DOMContentLoaded', loadComponents);
+window.onload = loadComponents;

@@ -1,194 +1,239 @@
-@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-
 :root {
-  --dark-gray: #2c3e50;
-  --gold: #d4af37;
-  --light-gray: #ecf0f1;
-  --background-color: #1a1a1a;
-  --font-family: 'Atkinson Hyperlegible', monospace;
+    --main-color: #1A1A1A; /* Koyu Antrasit */
+    --accent-color: #D4AF37; /* Fırçalanmış Altın */
+    --background-color: #F9F9F9; /* Kirli Beyaz */
+    --text-color: #333;
+    --light-text-color: #FFF;
+    --border-radius: 12px;
+    --shadow: 0px 8px 24px rgba(0, 0, 0, 0.1);
 }
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-  font-family: var(--font-family);
-  background-color: var(--background-color);
-  color: var(--light-gray);
-  line-height: 1.6;
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
 }
 
 .container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-header {
-  background-color: var(--dark-gray);
-  padding: 1.5rem 0;
-  border-bottom: 3px solid var(--gold);
+.section {
+    padding: 80px 0;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.section.is-visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-header .logo a {
-  color: var(--gold);
-  text-decoration: none;
-  font-size: 1.8rem;
-  font-weight: 700;
+/* Header & Navigation */
+.header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: rgba(26, 26, 26, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 15px 0;
+    color: var(--light-text-color);
 }
 
-header nav ul {
-  list-style-type: none;
-  display: flex;
-  gap: 20px;
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-header nav a {
-  color: var(--light-gray);
-  text-decoration: none;
-  font-size: 1.1rem;
-  padding: 5px 10px;
-  border-radius: 5px;
-  transition: background-color 0.3s, color 0.3s;
+.logo-link .logo-main { font-weight: 700; font-size: 1.5rem; letter-spacing: 1px; }
+.logo-link .logo-sub { font-weight: 300; font-size: 1.4rem; opacity: 0.8; margin-left: 8px; }
+
+.nav-links a {
+    color: var(--light-text-color);
+    text-decoration: none;
+    margin-left: 30px;
+    font-weight: 600;
+    transition: color 0.3s ease;
 }
 
-header nav a:hover,
-header nav a.active {
-  background-color: var(--gold);
-  color: var(--dark-gray);
+.nav-links a:hover, .nav-links a.active {
+    color: var(--accent-color);
 }
 
-main {
-  padding: 40px 0;
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
 }
+.hamburger-menu div { width: 25px; height: 3px; background-color: var(--light-text-color); margin: 5px 0; }
 
-h1, h2, h3 {
-  color: var(--gold);
-  margin-bottom: 20px;
-}
-
+/* Hero Section */
 .hero {
-  text-align: center;
-  padding: 60px 20px;
-  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://via.placeholder.com/1200x400.png/2c3e50/d4af37?text=Remax+Arda+İlci') no-repeat center center/cover;
+    position: relative;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--light-text-color);
+    padding: 0;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    max-width: 800px;
 }
 
 .btn {
-  display: inline-block;
-  background-color: var(--gold);
-  color: var(--dark-gray);
-  padding: 12px 25px;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: 700;
-  margin-top: 20px;
-  transition: transform 0.2s;
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: var(--main-color);
 }
 
 .btn:hover {
-  transform: scale(1.05);
+    transform: translateY(-3px);
 }
 
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
+/* Stats Section */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    text-align: center;
 }
 
-.service-card {
-  background: var(--dark-gray);
-  padding: 25px;
-  border-left: 5px solid var(--gold);
-  border-radius: 5px;
+.stat-item-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--accent-color);
 }
 
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 20px;
+.stat-item-label {
+    font-size: 1.2rem;
+    color: var(--text-color);
 }
 
-.portfolio-item {
-  background: var(--dark-gray);
-  border-radius: 5px;
-  overflow: hidden;
-  position: relative;
+/* Featured Section */
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
 }
 
-.portfolio-item img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  display: block;
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
 }
 
-.portfolio-item .info {
-  padding: 15px;
+.portfolio-card {
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
 }
 
-.portfolio-item .status {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background-color: var(--gold);
-  color: var(--dark-gray);
-  padding: 5px 10px;
-  font-size: 0.8rem;
-  border-radius: 3px;
-  font-weight: bold;
+.portfolio-card:hover {
+    transform: translateY(-10px);
 }
 
-.contact-container {
-  display: flex;
-  gap: 40px;
-  flex-wrap: wrap;
+.card-image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
 }
 
-.contact-form {
-  flex: 2;
-  min-width: 300px;
+.card-content {
+    padding: 25px;
 }
 
-.contact-info {
-  flex: 1;
-  min-width: 300px;
+.card-title { font-size: 1.5rem; margin-bottom: 10px; }
+.card-location { font-weight: 600; color: var(--accent-color); margin-bottom: 15px; }
+.card-price { font-size: 1.3rem; font-weight: 700; }
+
+/* WhatsApp CTA */
+.whatsapp-cta {
+    background-color: var(--main-color);
+    color: var(--light-text-color);
+    text-align: center;
 }
 
-.form-group {
-  margin-bottom: 20px;
+.whatsapp-title { font-size: 2rem; margin-bottom: 20px; }
+.whatsapp-text { max-width: 600px; margin: 0 auto 30px auto; opacity: 0.9; }
+
+/* Footer */
+.footer {
+    background-color: var(--main-color);
+    color: var(--light-text-color);
+    padding: 40px 0;
+    text-align: center;
 }
 
-.form-group label {
-  display: block;
-  margin-bottom: 5px;
-  color: var(--gold);
-}
+.footer-text { opacity: 0.7; }
 
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 10px;
-  background-color: var(--dark-gray);
-  border: 1px solid var(--gold);
-  color: var(--light-gray);
-  border-radius: 5px;
-  font-family: var(--font-family);
-}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hamburger-menu { display: block; }
+    
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px; /* header height */
+        left: 0;
+        width: 100%;
+        background-color: var(--main-color);
+        text-align: center;
+    }
+    .nav-links.active a { margin: 15px 0; }
 
-footer {
-  background-color: var(--dark-gray);
-  color: var(--light-gray);
-  text-align: center;
-  padding: 2rem 0;
-  margin-top: 40px;
-  border-top: 3px solid var(--gold);
+    .hero-title { font-size: 2.5rem; }
+    .featured-grid { grid-template-columns: 1fr; }
 }
