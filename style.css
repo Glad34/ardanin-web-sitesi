@@ -1,0 +1,70 @@
+/* Luxury Theme: Koyu Gri ve Altın */
+
+body {
+    background-color: #212121; /* Koyu Gri */
+    color: #E0E0E0; /* Açık Gri Yazı */
+    font-family: 'Atkinson Hyperlegible', monospace;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    color: #FFD700; /* Altın */
+}
+
+a {
+    color: #FFD700;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #FFFFFF;
+}
+
+main {
+    padding: 2rem;
+    min-height: 70vh;
+    text-align: center;
+}
+
+/* Header & Nav */
+header {
+    background-color: #1a1a1a;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #FFD700;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #FFD700;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    font-size: 1.1rem;
+}
+
+/* Footer */
+footer {
+    background-color: #1a1a1a;
+    color: #AAAAAA;
+    text-align: center;
+    padding: 1.5rem;
+    border-top: 1px solid #444;
+}
