@@ -1,5 +1,6 @@
 
 async function loadComponents() {
+    console.log("Bileşenler yükleniyor...");
     const elements = document.querySelectorAll('[data-component]');
     for (const el of elements) {
         const file = el.getAttribute('data-component');
@@ -13,10 +14,10 @@ async function loadComponents() {
                     const ns = document.createElement('script');
                     Array.from(s.attributes).forEach(a => ns.setAttribute(a.name, a.value));
                     ns.appendChild(document.createTextNode(s.innerHTML));
-                    el.appendChild(ns); s.remove();
+                    document.body.appendChild(ns); s.remove();
                 });
             }
-        } catch (e) { console.error('Bileşen Hatası:', file); }
+        } catch (e) { console.error('Hata:', file, e); }
     }
 }
-window.onload = loadComponents;
+window.addEventListener('DOMContentLoaded', loadComponents);

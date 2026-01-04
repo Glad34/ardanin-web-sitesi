@@ -1,12 +1,12 @@
 {
     "pages": {
         "index.html": [
-            "components/header.html",
-            "components/hero.html",
-            "components/stats.html",
-            "components/featured.html",
-            "components/whatsapp.html",
-            "components/footer.html"
+            "header.html",
+            "hero.html",
+            "stats.html",
+            "featured-listings.html",
+            "whatsapp-cta.html",
+            "footer.html"
         ]
     }
 }

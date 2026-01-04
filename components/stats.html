@@ -1,14 +1,46 @@
-<section class="section" data-id="stats_main">
-    <div class="container" data-id="stats_container">
-        <div class="stats-grid" data-id="stats_grid_wrapper">
-            <div class="stat-item" data-id="stats_item_sold">
-                <p class="stat-item-number" data-id="stats_item_sold-number">120+</p>
-                <p class="stat-item-label" data-id="stats_item_sold-label">Satılan Mülk</p>
-            </div>
-            <div class="stat-item" data-id="stats_item_clients">
-                <p class="stat-item-number" data-id="stats_item_clients-number">90+</p>
-                <p class="stat-item-label" data-id="stats_item_clients-label">Mutlu Müşteri</p>
-            </div>
+<style>
+    .stats-section {
+        background-color: #fff;
+    }
+    .stats-container {
+        display: flex;
+        justify-content: space-around;
+        text-align: center;
+        gap: 30px;
+    }
+    .stat-item {
+        padding: 20px;
+    }
+    .stat-item .number {
+        font-family: 'Playfair Display', serif;
+        font-size: 3.5rem;
+        color: var(--accent-color);
+        font-weight: 700;
+    }
+    .stat-item .label {
+        font-size: 1.1rem;
+        color: var(--text-color);
+        margin-top: 5px;
+    }
+    @media (max-width: 768px) {
+        .stats-container {
+            flex-direction: column;
+        }
+    }
+</style>
+<section class="stats-section">
+    <div class="container stats-container">
+        <div class="stat-item">
+            <div class="number">120+</div>
+            <div class="label">Satılan Mülk</div>
+        </div>
+        <div class="stat-item">
+            <div class="number">98%</div>
+            <div class="label">Mutlu Müşteri</div>
+        </div>
+        <div class="stat-item">
+            <div class="number">15 Yıl</div>
+            <div class="label">Sektör Tecrübesi</div>
         </div>
     </div>
 </section>

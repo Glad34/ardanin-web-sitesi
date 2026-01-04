@@ -1,0 +1,83 @@
+<style>
+    .listings-section h2 {
+        text-align: center;
+        margin-bottom: 50px;
+        font-size: 2.5rem;
+    }
+    .listings-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+    }
+    .listing-card {
+        background-color: #fff;
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .listing-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    }
+    .listing-card img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        display: block;
+        filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+    }
+    .listing-info {
+        padding: 25px;
+    }
+    .listing-info h3 {
+        margin-bottom: 10px;
+    }
+    .listing-location {
+        color: #777;
+        margin-bottom: 15px;
+    }
+    .listing-price {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--accent-color);
+        margin-top: 15px;
+    }
+</style>
+<section class="listings-section" id="featured">
+    <div class="container">
+        <h2>Öne Çıkan Portföyler</h2>
+        <div class="listings-grid">
+            <!-- Card 1 -->
+            <div class="listing-card">
+                <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200" alt="Urla'da Lüks Villa">
+                <div class="listing-info">
+                    <h3>Urla'da Deniz Manzaralı Malikane</h3>
+                    <p class="listing-location">Urla, İzmir</p>
+                    <p>6+2 Oda | 750 m² | Özel Havuz</p>
+                    <div class="listing-price">Teklif Alınız</div>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="listing-card">
+                <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200" alt="Çeşme'de Modern Villa">
+                <div class="listing-info">
+                    <h3>Çeşme'de Modern Tasarım Villa</h3>
+                    <p class="listing-location">Çeşme, İzmir</p>
+                    <p>4+1 Oda | 420 m² | Geniş Bahçe</p>
+                    <div class="listing-price">Teklif Alınız</div>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="listing-card">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&q=85&fm=jpg&crop=entropy&cs=srgb&w=1200" alt="Güzelbahçe'de Yatırımlık Konut">
+                <div class="listing-info">
+                    <h3>Güzelbahçe'de Yatırımlık Konut</h3>
+                    <p class="listing-location">Güzelbahçe, İzmir</p>
+                    <p>5+1 Oda | 500 m² | Sahile Yakın</p>
+                    <div class="listing-price">Teklif Alınız</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
