@@ -11,10 +11,15 @@
         "portfolyo.html": [
             "header.html",
             "footer.html"
+        ],
+        "i̇letişim.html": [
+            "header.html",
+            "footer.html"
         ]
     },
     "style": {
         "theme": "Luxury",
         "branding": "Koyu gri ve altın, yazı tipi Atkinson Hyperlegible Mono"
-    }
+    },
+    "scope": "Bu proje bir Remax Gayrimenkul Danışmanı olan \"Arda İlci\" ye ait bir web site olucak."
 }
